@@ -1,0 +1,32 @@
+{
+    "test1":{
+        "id":"1",
+        "title": "登录成功",
+        "interfaceUrl":"https://www.wanandroid.com/user/login",
+        "name":"login",
+        "method":"post",
+        "value":"{'username':'liangchao','password':'123456'}",
+        "header":"{}",
+        "expect":"0"
+    },
+    "test2":{
+        "id":"2",
+        "title": "登录成功",
+        "interfaceUrl":"https://www.wanandroid.com/user/register",
+        "name":"register",
+        "method":"post",
+        "value":"{'username':'liangchao03','password':'123456','repassword':'123456'}",
+        "header":"{}",
+        "expect":0
+    },
+    "test3":{
+        "id":"3",
+        "title": "登录成功",
+        "interfaceUrl":"https://www.wanandroid.com/user/logout/json",
+        "name":"logout",
+        "method":"get",
+        "value":"{'username':'liangchao'}",
+        "header":"{}",
+        "expect":"0"
+    }
+}

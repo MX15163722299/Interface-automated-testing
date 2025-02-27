@@ -1,0 +1,47 @@
+-
+    expect: '0'
+    id: '1'
+    title: 登录成功
+    interfaceUrl: 'https://www.wanandroid.com/user/login'
+    method: post
+    content-type: 'data'
+    file_var: ''
+    file_path: ''
+    name: login
+    value: '{''username'':''liangchao'',''password'':''123456''}'
+    header: '{}'
+    rely: n
+    caseid: ''
+    extract: ''
+-
+    expect: '0'
+    id: '2'
+    title: 注册成功
+    interfaceUrl: 'https://www.wanandroid.com/user/register'
+    content-type: 'data'
+    file_var: ''
+    file_path: ''
+    method: post
+    name: register
+    value: '{''username'':''liangchao03'',''password'':''123456'',''repassword'':''123456''}'
+    header: '{}'
+    rely: n
+    caseid: ''
+    extract: ''
+-
+    expect: '0'
+    id: '3'
+    title: 退出成功
+    interfaceUrl: 'https://www.wanandroid.com/user/logout/json'
+    method: get
+    content-type: 'params'
+    file_var: ''
+    file_path: ''
+    name: logout
+    value: '{''username'':''liangchao''}'
+    header: '{}'
+    rely: n
+    caseid: ''
+    extract: ''
+
+
