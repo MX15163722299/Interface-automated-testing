@@ -3,7 +3,7 @@ import os
 
 from pipenv.patched.safety.formatters import json
 from pipenv.vendor.ruamel import yaml
-
+import json
 '''
 定义一个类
 1 定义初始化方法
@@ -34,6 +34,7 @@ class ReadData():
         # 1.4
         # 获取最大行最大列
         self.max_row = self.sheet.nrows
+
         self.max_col = self.sheet.ncols
 
         # 1.5
@@ -48,7 +49,7 @@ class ReadData():
     def read_excel(self):
         for i in range(1,self.max_row):
             # 获取每一行的数据
-            rew_value = self.sheet.cell_value(i,0)
+            rew_value = self.sheet.row_values(i,0)
             #组装成为一个字典
             dict1 = dict(zip(self.first_row,rew_value))
             #组装好的字典放到列表里面
@@ -73,6 +74,18 @@ class ReadData():
             testdata = yaml.load(f)
             testdata2 = list(testdata.values())
         return testdata2
+
+if __name__ == '__main__':
+    re = ReadData()
+    rep = re.read_excel()
+    repp = rep[0]["expect"]
+    print(repp)
+    dict_data = eval(repp)
+    print(dict_data["errorCode"])
+    # expect = rep["expect"]
+    #
+    # print(expect)
+
 
 
 '''

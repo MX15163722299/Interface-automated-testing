@@ -1,21 +1,40 @@
 
-
-import random
-
 import pytest
-# def test_case001():
-#     print("\n执行测试用例 1")
-#     assert 1 == 2,"两个数不相等"
+from common.readData import ReadData
+import requests
+'''
+导包
+1.获取测试数据
+2.定义一个测试类
+    2.1 创建测试用例方法
+        2.1.1 获取测试数据内进行请求时需要的关键字段
+        2.1.2 进行请求，获取返回结果
+        2.1.3 断言返回实际结果，并且判断执行成功/失败
 
+
+'''
+
+rd = ReadData()
+
+test_data = rd.read_excel()
+
+print(test_data)
 
 class TestCase:
-    def test_case001(self):
-        print("执行测试用例 1")
-        assert random.choice(['Ture','False'])
+    def test_case(self):
+        interfaceUrl = test_data[0]["interfaceUrl"]
+        method = test_data[0]["method"]
+        value = test_data[0]["value"]
+        expect = test_data[0]["expect"]
+        print(interfaceUrl, method, value, expect)
+        if method == "get":
+            response = requests.get(interfaceUrl,params=eval(value))
+        elif method == "post":
+            response = requests.post(interfaceUrl,data=eval(value))
+        res_dict = response.json()
+        # expect = expect.json()
 
-    def test_case002(self):
-        print("这是测试用例 2")
-        assert 2 == 2,"两个数相等"
+        assert str(res_dict["errorCode"]) == str(eval(expect)["errorCode"]),"预期结果与实际结果不符合"
 if __name__ == '__main__':
-    # pytest.main(['-v','test_case1.py::TestCase::test_case002','-n=2'])
-    pytest.main(['-v','-reruns=2'])
+    pytest.main(["-vs"])
+
