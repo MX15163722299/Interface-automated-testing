@@ -15,7 +15,7 @@ class TestCase:
 
     def test_case002(self):
         print("这是测试用例 2")
-        assert 2 == 2,"两个数相等"
+        assert 2 == 1,"两个数相等"
 if __name__ == '__main__':
     # pytest.main(['-v','test_case1.py::TestCase::test_case002','-n=2'])
     pytest.main(['-v','-reruns=2'])
