@@ -1,21 +1,52 @@
 
-
-import random
-
 import pytest
-# def test_case001():
-#     print("\n执行测试用例 1")
-#     assert 1 == 2,"两个数不相等"
+from common.readData import ReadData
+import requests
+from common.configHttp import ConfigHttp
+'''
+导包
+1.获取测试数据
+2.定义一个测试类
+    2.1 创建测试用例方法
+        2.1.1 获取测试数据内进行请求时需要的关键字段
+        2.1.2 进行请求，获取返回结果
+        2.1.3 断言返回实际结果，并且判断执行成功/失败
 
+
+'''
+
+rd = ReadData()
+
+test_data = rd.read_excel()
+
+# print(test_data)
 
 class TestCase:
-    def test_case001(self):
-        print("执行测试用例 1")
-        assert random.choice(['Ture','False'])
+    @pytest.mark.parametrize("dic",test_data)
+    def test_case(self,dic):
+       #实例化公共请求类
+        ch = ConfigHttp(dic)
+       #调用请求方法
+        response = ch.run()
 
-    def test_case002(self):
-        print("这是测试用例 2")
-        assert 2 == 1,"两个数相等"
+        res_dict = response.json()
+        # expect = expect.json()
+        print(res_dict)
+        assert str(res_dict["errorCode"]) == str(eval(dic["expect"])["errorCode"]),"预期结果与实际结果不符合"
 if __name__ == '__main__':
-    # pytest.main(['-v','test_case1.py::TestCase::test_case002','-n=2'])
-    pytest.main(['-v','-reruns=2'])
+    pytest.main(["-vs"])
+#
+# import pytest
+# list1 = [1, 2, 3,4,5]
+# list2 = [[1,2],[2,2],[2,3],[2,4],[2,5]]
+# class TestClass:
+#     # @pytest.mark.parametrize("args",list1)
+#     # def test_case(self,args):
+#     #     print(f"\n执行测试用例的数据{args}")
+#     #     assert args == 5,"这个数不是5"
+#     @pytest.mark.parametrize("num1,num2",list2)
+#     def test_case2(self,num1,num2):
+#         print(f"\n执行测试用例的参数{num1}/{num2}")
+#         assert num1 == num2,"两个数不相等"
+# if __name__ == '__main__':
+#     pytest.main(["-vs"])
