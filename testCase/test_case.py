@@ -2,6 +2,7 @@
 import pytest
 from common.readData import ReadData
 import requests
+from common.configHttp import ConfigHttp
 '''
 导包
 1.获取测试数据
@@ -18,23 +19,34 @@ rd = ReadData()
 
 test_data = rd.read_excel()
 
-print(test_data)
+# print(test_data)
 
 class TestCase:
-    def test_case(self):
-        interfaceUrl = test_data[0]["interfaceUrl"]
-        method = test_data[0]["method"]
-        value = test_data[0]["value"]
-        expect = test_data[0]["expect"]
-        print(interfaceUrl, method, value, expect)
-        if method == "get":
-            response = requests.get(interfaceUrl,params=eval(value))
-        elif method == "post":
-            response = requests.post(interfaceUrl,data=eval(value))
+    @pytest.mark.parametrize("dic",test_data)
+    def test_case(self,dic):
+       #实例化公共请求类
+        ch = ConfigHttp(dic)
+       #调用请求方法
+        response = ch.run()
+
         res_dict = response.json()
         # expect = expect.json()
-
-        assert str(res_dict["errorCode"]) == str(eval(expect)["errorCode"]),"预期结果与实际结果不符合"
+        print(res_dict)
+        assert str(res_dict["errorCode"]) == str(eval(dic["expect"])["errorCode"]),"预期结果与实际结果不符合"
 if __name__ == '__main__':
     pytest.main(["-vs"])
-
+#
+# import pytest
+# list1 = [1, 2, 3,4,5]
+# list2 = [[1,2],[2,2],[2,3],[2,4],[2,5]]
+# class TestClass:
+#     # @pytest.mark.parametrize("args",list1)
+#     # def test_case(self,args):
+#     #     print(f"\n执行测试用例的数据{args}")
+#     #     assert args == 5,"这个数不是5"
+#     @pytest.mark.parametrize("num1,num2",list2)
+#     def test_case2(self,num1,num2):
+#         print(f"\n执行测试用例的参数{num1}/{num2}")
+#         assert num1 == num2,"两个数不相等"
+# if __name__ == '__main__':
+#     pytest.main(["-vs"])

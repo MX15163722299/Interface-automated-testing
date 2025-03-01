@@ -78,6 +78,7 @@ class ReadData():
 if __name__ == '__main__':
     re = ReadData()
     rep = re.read_excel()
+    print(rep)
     repp = rep[0]["expect"]
     print(repp)
     dict_data = eval(repp)
