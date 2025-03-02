@@ -11,16 +11,10 @@ from common.configHttp import ConfigHttp
         2.1.1 获取测试数据内进行请求时需要的关键字段
         2.1.2 进行请求，获取返回结果
         2.1.3 断言返回实际结果，并且判断执行成功/失败
-
-
 '''
-
 rd = ReadData()
-
 test_data = rd.read_excel()
-
 # print(test_data)
-
 class TestCase:
     @pytest.mark.parametrize("dic",test_data)
     def test_case(self,dic):
@@ -32,7 +26,13 @@ class TestCase:
         res_dict = response.json()
         # expect = expect.json()
         print(res_dict)
-        assert str(res_dict["errorCode"]) == str(eval(dic["expect"])["errorCode"]),"预期结果与实际结果不符合"
+        # assert str(res_dict["errorCode"]) == str(eval(dic["expect"])["errorCode"]),"预期结果与实际结果不符合"
+        try:
+            assert str(res_dict["errorCode"]) == str(eval(dic["expect"])["errorCode"]),"预期结果与实际结果不符合"
+        except Exception as e:
+            print(f"\n用例执行失败")
+            raise
+
 if __name__ == '__main__':
     pytest.main(["-vs"])
 #
