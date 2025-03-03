@@ -3,6 +3,7 @@ import pytest
 from common.readData import ReadData
 import requests
 from common.configHttp import ConfigHttp
+from common.publicAssert import PublicAssert
 '''
 导包
 1.获取测试数据
@@ -22,16 +23,18 @@ class TestCase:
         ch = ConfigHttp(dic)
        #调用请求方法
         response = ch.run()
-
-        res_dict = response.json()
-        # expect = expect.json()
-        print(res_dict)
+        print(f"结果：========={response}")
         # assert str(res_dict["errorCode"]) == str(eval(dic["expect"])["errorCode"]),"预期结果与实际结果不符合"
-        try:
-            assert str(res_dict["errorCode"]) == str(eval(dic["expect"])["errorCode"]),"预期结果与实际结果不符合"
-        except Exception as e:
-            print(f"\n用例执行失败")
-            raise
+        # try:
+        #     assert str(res_dict["errorCode"]) == str(eval(dic["expect"])["errorCode"]),"预期结果与实际结果不符合"
+        # except Exception as e:
+        #     print(f"\n用例执行失败")
+        #     raise
+
+
+       # 实例化断言
+        pA = PublicAssert(dic,response)
+        pA.public_assert()
 
 if __name__ == '__main__':
     pytest.main(["-vs"])
