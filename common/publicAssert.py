@@ -16,7 +16,6 @@
 """
 from jsonpath import jsonpath
 
-
 class PublicAssert:
 # 1.定义初始化方法：
     def __init__(self,dic,res):
@@ -63,4 +62,4 @@ if __name__ == '__main__':
     #
     # b = jsonpath(data,"$..name")
     # b = jsonpath(data,"$.name")
-    # print(b)   
+    # print(b)

@@ -1,9 +1,7 @@
 import xlrd
 import os
-
-from pipenv.patched.safety.formatters import json
-from pipenv.vendor.ruamel import yaml
 import json
+import yaml
 '''
 定义一个类
 1 定义初始化方法
