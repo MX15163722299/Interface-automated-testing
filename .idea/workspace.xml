@@ -4,8 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7136bfb8-06ba-4c27-9bc9-aee6ad084731" name="Changes" comment="Changes/2525-3-4/测试评审模式1">
+    <list default="true" id="7136bfb8-06ba-4c27-9bc9-aee6ad084731" name="Changes" comment="Changes/2525-3-4/测试评审模式3">
+      <change afterPath="$PROJECT_DIR$/common/allure_revise.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/pythonProject—vip6.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/pythonProject—vip6.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,34 +57,34 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Python tests.Python tests for test_case.TestCase.test_case.executor": "Run",
-    "Python tests.Python tests in test_case.py.executor": "Run",
-    "Python 测试.Python 测试 (test_case1.py 内).executor": "Run",
-    "Python.__init__.executor": "Run",
-    "Python.configHttp.executor": "Run",
-    "Python.log.executor": "Run",
-    "Python.main.executor": "Run",
-    "Python.publicAssert.executor": "Run",
-    "Python.readConfig.executor": "Run",
-    "Python.readData.executor": "Run",
-    "Python.test_case.executor": "Run",
-    "Python.test_case1.executor": "Run",
-    "Python.时间包学习.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "dev",
-    "last_opened_file_path": "D:/py_code/pp5/testCase",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "sshConsole",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Python tests.Python tests for test_case.TestCase.test_case.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests in test_case.py.executor&quot;: &quot;Run&quot;,
+    &quot;Python 测试.Python 测试 (test_case1.py 内).executor&quot;: &quot;Run&quot;,
+    &quot;Python.__init__.executor&quot;: &quot;Run&quot;,
+    &quot;Python.configHttp.executor&quot;: &quot;Run&quot;,
+    &quot;Python.log.executor&quot;: &quot;Run&quot;,
+    &quot;Python.main.executor&quot;: &quot;Run&quot;,
+    &quot;Python.publicAssert.executor&quot;: &quot;Run&quot;,
+    &quot;Python.readConfig.executor&quot;: &quot;Run&quot;,
+    &quot;Python.readData.executor&quot;: &quot;Run&quot;,
+    &quot;Python.test_case.executor&quot;: &quot;Run&quot;,
+    &quot;Python.test_case1.executor&quot;: &quot;Run&quot;,
+    &quot;Python.时间包学习.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;dev&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/py_code/pp5/testCase&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;sshConsole&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\py_code\pp5\testCase" />
@@ -206,10 +210,10 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.main" />
         <item itemvalue="Python.时间包学习" />
         <item itemvalue="Python.readConfig" />
         <item itemvalue="Python.publicAssert" />
-        <item itemvalue="Python.main" />
         <item itemvalue="Python.configHttp" />
       </list>
     </recent_temporary>
@@ -336,7 +340,15 @@
       <option name="project" value="LOCAL" />
       <updated>1741057107285</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Changes/2525-3-4/测试评审模式3">
+      <option name="closed" value="true" />
+      <created>1741074436934</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1741074436934</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -397,7 +409,8 @@
     <MESSAGE value="Changes/2525-3-3                       /完成" />
     <MESSAGE value="Changes/2525-3-4/测试评审模式                     /" />
     <MESSAGE value="Changes/2525-3-4/测试评审模式1" />
-    <option name="LAST_COMMIT_MESSAGE" value="Changes/2525-3-4/测试评审模式1" />
+    <MESSAGE value="Changes/2525-3-4/测试评审模式3" />
+    <option name="LAST_COMMIT_MESSAGE" value="Changes/2525-3-4/测试评审模式3" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -412,11 +425,11 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/pp5$.coverage" NAME="时间包学习 覆盖结果" MODIFIED="1741013201404" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../Python_pytest学习" />
-    <SUITE FILE_PATH="coverage/pp5$readConfig.coverage" NAME="readConfig 覆盖结果" MODIFIED="1741006478025" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/common" />
     <SUITE FILE_PATH="coverage/pp1$readData.coverage" NAME="readData Coverage Results" MODIFIED="1740763387388" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/common" />
+    <SUITE FILE_PATH="coverage/pp5$readConfig.coverage" NAME="readConfig 覆盖结果" MODIFIED="1741006478025" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/common" />
     <SUITE FILE_PATH="coverage/pp5$configHttp.coverage" NAME="configHttp 覆盖结果" MODIFIED="1741008295823" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/common" />
     <SUITE FILE_PATH="coverage/pythonproject$test_case1.coverage" NAME="test_case1 覆盖结果" MODIFIED="1740668534682" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../Python_pytest学习/pytest_学习" />
-    <SUITE FILE_PATH="coverage/pp5$main.coverage" NAME="main 覆盖结果" MODIFIED="1741015857895" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/pp5$main.coverage" NAME="main 覆盖结果" MODIFIED="1741078989261" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/pp5$readData.coverage" NAME="readData 覆盖结果" MODIFIED="1741006466028" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/common" />
     <SUITE FILE_PATH="coverage/pp5$test_case.coverage" NAME="test_case 覆盖结果" MODIFIED="1741004039025" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/testCase" />
     <SUITE FILE_PATH="coverage/pythonproject$readData.coverage" NAME="readData 覆盖结果" MODIFIED="1740468439243" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/common" />

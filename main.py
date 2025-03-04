@@ -13,16 +13,25 @@
 
 
 """
-def set_windows_title(new_title,file_path):
-    with open(f"{file_path}/index.html",'r+',encoding='utf-8') as f:
-        all_lines = f.readlines()
-    with open(f"{file_path}/index.html",'w',encoding='utf-8') as w:
-        for line in all_lines:
-            w.write(line.replace("Allure Report",new_title))
+# import json
+# def set_windows_title(new_title,file_path):
+#     with open(f"{file_path}/index.html",'r+',encoding='utf-8') as f:
+#         all_lines = f.readlines()
+#     with open(f"{file_path}/index.html",'w',encoding='utf-8') as w:
+#         for line in all_lines:
+#             w.write(line.replace("Allure Report",new_title))
+#
+# #修改报告内的标题：config_title
+# def config_title(name,file_path):
+#     file_path = f"{file_path}/widgets/summary.json"
+#     with open(file_path,'rb') as f:
+#         #json文件流解析成python字典
+#         param = json.load(f)
+#         param["reportName"] = name
+#     with open(file_path,'w',encoding='utf-8') as w:
+#         #将python字典数据写入json
+#         json.dump(param,w,ensure_ascii=False,indent=4)
 
-#修改报告内的标题：config_title
-def config_title():
-    pass
 
 
 
@@ -50,6 +59,10 @@ if __name__ == '__main__':
     os.system(f"allure generate {path} -o {report_path}")
 
     #修改标题
-    time.sleep(10)
 
-    set_windows_title("甜心科技",report_path)
+    from common.allure_revise import AllureRevise
+
+
+    AllureRevise.set_windows_title("甜心科技",report_path)
+    #修改报告类的标题
+    AllureRevise.config_title("登录模块",report_path)
