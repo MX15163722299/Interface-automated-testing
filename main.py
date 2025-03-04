@@ -21,6 +21,11 @@ def set_windows_title(new_title,file_path):
             w.write(line.replace("Allure Report",new_title))
 
 
+def config_title():
+    pass
+
+
+
 
 import os
 import time
