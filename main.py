@@ -20,7 +20,7 @@ def set_windows_title(new_title,file_path):
         for line in all_lines:
             w.write(line.replace("Allure Report",new_title))
 
-
+#1234
 def config_title():
     pass
 
