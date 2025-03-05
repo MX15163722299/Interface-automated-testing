@@ -13,6 +13,7 @@
 
 
 """
+
 # import json
 # def set_windows_title(new_title,file_path):
 #     with open(f"{file_path}/index.html",'r+',encoding='utf-8') as f:
@@ -31,6 +32,20 @@
 #     with open(file_path,'w',encoding='utf-8') as w:
 #         #将python字典数据写入json
 #         json.dump(param,w,ensure_ascii=False,indent=4)
+
+def set_windows_title(new_title,file_path):
+    with open(f"{file_path}/index.html",'r+',encoding='utf-8') as f:
+        all_lines = f.readlines()
+    with open(f"{file_path}/index.html",'w',encoding='utf-8') as w:
+        for line in all_lines:
+            w.write(line.replace("Allure Report",new_title))
+
+#修改报告内的标题：config_title
+def config_title(name,file_path):
+    file_path = f"{file_path}/widgets/summary.json"
+
+
+
 
 
 import os
