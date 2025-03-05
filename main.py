@@ -92,3 +92,4 @@ if __name__ == '__main__':
     auto_clear(5)
     sm = SendEmail()
     sm.send(f"{path}/测试报告{time_local}.zip")
+    print("test")
