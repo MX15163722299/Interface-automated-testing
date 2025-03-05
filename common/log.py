@@ -51,7 +51,7 @@ if __name__ == '__main__':
     log = log()
     for i in range(6):
         log.debug("我是")
-        time.sleep(61)
+        time.sleep(1)
     # import os
     # os.remove("D:/py_code/pp5/testLog/log.txt.2025-03-03_06-37-03")  # 看是否能正常删除
 
