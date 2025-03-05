@@ -23,10 +23,10 @@ class ConfigHttp(object):
             return response
 
     def __get(self):
-        response = requests.get(self.dic["interfaceUrl"], params=eval(self.dic["value"]))
+        response = requests.get(self.dic["interfaceUrl"], params=eval(self.dic["value"]),headers=eval(self.dic["header"]))
         return response
     def __post(self):
-        response = requests.post(self.dic["interfaceUrl"], data=eval(self.dic["value"]))
+        response = requests.post(self.dic["interfaceUrl"], data=eval(self.dic["value"]),headers=eval(self.dic["header"]))
         return response
 if __name__ == '__main__':
     #测试数据
