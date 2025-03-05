@@ -74,7 +74,7 @@ class SendEmail:
 
 if __name__ == '__main__':
     se = SendEmail()
-    se.send(r'D:\py_code\pp5\testReport\temp\测试报告.zip')
+    se.send(r'D:\py_code\pp5\testReport\temp\测试报告2025_03_05_19_16_04.zip')
 
 
 
