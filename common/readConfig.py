@@ -45,4 +45,4 @@ if __name__ == '__main__':
     re = ReadConfig()
     # print(re.get_options("mysql"))
     # print(re.get_option("mysql","host"))
-    print(re.get_config("mysql"))
+    print(re.get_config("email","sender"))

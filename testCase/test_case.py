@@ -4,6 +4,7 @@ from common.readData import ReadData
 import requests
 from common.configHttp import ConfigHttp
 from common.publicAssert import PublicAssert
+from common.pre_solve import PreSolve
 '''
 导包
 1.获取测试数据
@@ -19,6 +20,11 @@ test_data = rd.read_excel()
 class TestCase:
     @pytest.mark.parametrize("dic",test_data)
     def test_case(self,dic):
+
+        #实例化，解决依赖
+        ps = PreSolve(test_data)
+        #替换依赖值header,value
+        dic["header"],dic["value"] = ps.preSolve(dic)
        #实例化公共请求类
         ch = ConfigHttp(dic)
        #调用请求方法
