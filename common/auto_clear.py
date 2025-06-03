@@ -1,9 +1,9 @@
 import os
 import shutil
 def autoClear(n):
-    dir = f"{os.path.dirname(os.path.dirname(__file__))}/testReport/"
+    path = f"{os.path.dirname(os.path.dirname(__file__))}/testReport/"
     # print(f"位置：{dir}")
-    file_list = os.listdir(dir)
+    file_list = os.listdir(path)
     # print(file_list)
     file_list.sort(key=lambda x: os.path.getmtime(dir+x))
     # print(file_list[n:],"\n")

@@ -15,23 +15,24 @@ import pytest
 import shutil
 from common.send_email import SendEmail
 from common.auto_clear import autoClear
+from common.log import logger
 
 if __name__ == '__main__':
     #获取当前的时间
     time_local = time.strftime("%Y_%m_%d_%H_%M_%S", time.localtime())
-    print(time_local)
+    logger.info(f"info:{time_local}")
     #设置报告的存放路径
     report_path =  os.path.dirname(__file__) + f"/testReport/{time_local}"
     print(report_path)
 
     #文件获取路径
     path = os.path.dirname(__file__)+"/testReport/temp"
-    print(path)
 
+    logger.info(f"info:{path}")
     #执行测试用例生成测试报告
 
     pytest.main(["-vs",f"--alluredir={path}","--clean-alluredir"])
-    # time.sleep(3)
+
     #将临时报告转化为真正的
     os.system(f"allure generate {path} -o {report_path}")
 
