@@ -2,7 +2,7 @@
 import pytest
 from common.readData import ReadData
 import requests
-from common.configHttp import ConfigHttp
+from common.config_http import ConfigHttp
 from common.publicAssert import PublicAssert
 from common.pre_solve import PreSolve
 '''

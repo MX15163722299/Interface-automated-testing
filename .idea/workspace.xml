@@ -4,275 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7136bfb8-06ba-4c27-9bc9-aee6ad084731" name="Changes" comment="更新的测试用例，修改了 readData 、readconfig、pre_solve、configHttp、ding_talk。添加了 mock服务">
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/pythonProject—vip6.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/pythonProject—vip6.iml" afterDir="false" />
+    <list default="true" id="7136bfb8-06ba-4c27-9bc9-aee6ad084731" name="Changes" comment="更新的测试测试用例，并且调试修改了代码">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/configHttp.py" beforeDir="false" afterPath="$PROJECT_DIR$/common/configHttp.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/auto_clear.py" beforeDir="false" afterPath="$PROJECT_DIR$/common/auto_clear.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/configHttp.py" beforeDir="false" afterPath="$PROJECT_DIR$/common/config_http.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/common/pre_solve.py" beforeDir="false" afterPath="$PROJECT_DIR$/common/pre_solve.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/common/publicAssert.py" beforeDir="false" afterPath="$PROJECT_DIR$/common/publicAssert.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/send_email.py" beforeDir="false" afterPath="$PROJECT_DIR$/common/send_email.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config.ini" beforeDir="false" afterPath="$PROJECT_DIR$/config.ini" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testCase/test_case.py" beforeDir="false" afterPath="$PROJECT_DIR$/testCase/test_case.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/testData/data.xls" beforeDir="false" afterPath="$PROJECT_DIR$/testData/data.xls" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testReport/2025_03_03_23_03_31/app.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testReport/2025_03_03_23_03_31/data/behaviors.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testReport/2025_03_03_23_03_31/data/behaviors.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testReport/2025_03_03_23_03_31/data/categories.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testReport/2025_03_03_23_03_31/data/categories.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testReport/2025_03_03_23_03_31/data/packages.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testReport/2025_03_03_23_03_31/data/suites.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testReport/2025_03_03_23_03_31/data/suites.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testReport/2025_03_03_23_03_31/data/test-cases/1762842f105be182.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testReport/2025_03_03_23_03_31/data/test-cases/40602bc3ccf12a29.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testReport/2025_03_03_23_03_31/data/test-cases/cd4e193b19c66e64.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testReport/2025_03_03_23_03_31/data/test-cases/de9ebe28ebcd576f.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testReport/2025_03_03_23_03_31/data/timeline.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testReport/2025_03_03_23_03_31/export/influxDbData.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testReport/2025_03_03_23_03_31/export/mail.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testReport/2025_03_03_23_03_31/export/prometheusData.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testReport/2025_03_03_23_03_31/favicon.ico" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testReport/2025_03_03_23_03_31/history/categories-trend.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testReport/2025_03_03_23_03_31/history/duration-trend.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testReport/2025_03_03_23_03_31/history/history-trend.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testReport/2025_03_03_23_03_31/history/history.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testReport/2025_03_03_23_03_31/history/retry-trend.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testReport/2025_03_03_23_03_31/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testReport/2025_03_03_23_03_31/plugins/behaviors/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testReport/2025_03_03_23_03_31/plugins/packages/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testReport/2025_03_03_23_03_31/plugins/screen-diff/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testReport/2025_03_03_23_03_31/plugins/screen-diff/styles.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testReport/2025_03_03_23_03_31/styles.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testReport/2025_03_03_23_03_31/widgets/behaviors.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testReport/2025_03_03_23_03_31/widgets/categories-trend.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testReport/2025_03_03_23_03_31/widgets/categories.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testReport/2025_03_03_23_03_31/widgets/duration-trend.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testReport/2025_03_03_23_03_31/widgets/duration.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testReport/2025_03_03_23_03_31/widgets/environment.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testReport/2025_03_03_23_03_31/widgets/executors.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testReport/2025_03_03_23_03_31/widgets/history-trend.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testReport/2025_03_03_23_03_31/widgets/launch.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testReport/2025_03_03_23_03_31/widgets/retry-trend.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testReport/2025_03_03_23_03_31/widgets/severity.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testReport/2025_03_03_23_03_31/widgets/status-chart.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testReport/2025_03_03_23_03_31/widgets/suites.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testReport/2025_03_03_23_03_31/widgets/summary.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testReport/2025_03_03_23_22_03/app.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testReport/2025_03_03_23_22_03/data/behaviors.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testReport/2025_03_03_23_22_03/data/behaviors.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testReport/2025_03_03_23_22_03/data/categories.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testReport/2025_03_03_23_22_03/data/categories.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testReport/2025_03_03_23_22_03/data/packages.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testReport/2025_03_03_23_22_03/data/suites.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testReport/2025_03_03_23_22_03/data/suites.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testReport/2025_03_03_23_22_03/data/test-cases/31c71f768919295.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testReport/2025_03_03_23_22_03/data/test-cases/7cb54a7bd1d8e616.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testReport/2025_03_03_23_22_03/data/test-cases/94d59d7e96b3ebaf.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testReport/2025_03_03_23_22_03/data/test-cases/b626b9291c3aa775.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testReport/2025_03_03_23_22_03/data/timeline.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testReport/2025_03_03_23_22_03/export/influxDbData.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testReport/2025_03_03_23_22_03/export/mail.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testReport/2025_03_03_23_22_03/export/prometheusData.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testReport/2025_03_03_23_22_03/favicon.ico" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testReport/2025_03_03_23_22_03/history/categories-trend.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testReport/2025_03_03_23_22_03/history/duration-trend.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testReport/2025_03_03_23_22_03/history/history-trend.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testReport/2025_03_03_23_22_03/history/history.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testReport/2025_03_03_23_22_03/history/retry-trend.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testReport/2025_03_03_23_22_03/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testReport/2025_03_03_23_22_03/plugins/behaviors/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testReport/2025_03_03_23_22_03/plugins/packages/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testReport/2025_03_03_23_22_03/plugins/screen-diff/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testReport/2025_03_03_23_22_03/plugins/screen-diff/styles.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testReport/2025_03_03_23_22_03/styles.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testReport/2025_03_03_23_22_03/widgets/behaviors.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testReport/2025_03_03_23_22_03/widgets/categories-trend.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testReport/2025_03_03_23_22_03/widgets/categories.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testReport/2025_03_03_23_22_03/widgets/duration-trend.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testReport/2025_03_03_23_22_03/widgets/duration.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testReport/2025_03_03_23_22_03/widgets/environment.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testReport/2025_03_03_23_22_03/widgets/executors.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testReport/2025_03_03_23_22_03/widgets/history-trend.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testReport/2025_03_03_23_22_03/widgets/launch.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testReport/2025_03_03_23_22_03/widgets/retry-trend.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testReport/2025_03_03_23_22_03/widgets/severity.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testReport/2025_03_03_23_22_03/widgets/status-chart.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testReport/2025_03_03_23_22_03/widgets/suites.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testReport/2025_03_03_23_22_03/widgets/summary.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testReport/2025_03_03_23_23_07/app.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testReport/2025_03_03_23_23_07/data/behaviors.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testReport/2025_03_03_23_23_07/data/behaviors.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testReport/2025_03_03_23_23_07/data/categories.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testReport/2025_03_03_23_23_07/data/categories.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testReport/2025_03_03_23_23_07/data/packages.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testReport/2025_03_03_23_23_07/data/suites.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testReport/2025_03_03_23_23_07/data/suites.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testReport/2025_03_03_23_23_07/data/test-cases/5a50cb5696b0c05d.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testReport/2025_03_03_23_23_07/data/test-cases/8ffc60c73ac24865.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testReport/2025_03_03_23_23_07/data/test-cases/cb169766ecc97f6.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testReport/2025_03_03_23_23_07/data/test-cases/cbf55f34ebd10cdb.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testReport/2025_03_03_23_23_07/data/timeline.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testReport/2025_03_03_23_23_07/export/influxDbData.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testReport/2025_03_03_23_23_07/export/mail.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testReport/2025_03_03_23_23_07/export/prometheusData.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testReport/2025_03_03_23_23_07/favicon.ico" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testReport/2025_03_03_23_23_07/history/categories-trend.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testReport/2025_03_03_23_23_07/history/duration-trend.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testReport/2025_03_03_23_23_07/history/history-trend.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testReport/2025_03_03_23_23_07/history/history.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testReport/2025_03_03_23_23_07/history/retry-trend.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testReport/2025_03_03_23_23_07/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testReport/2025_03_03_23_23_07/plugins/behaviors/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testReport/2025_03_03_23_23_07/plugins/packages/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testReport/2025_03_03_23_23_07/plugins/screen-diff/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testReport/2025_03_03_23_23_07/plugins/screen-diff/styles.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testReport/2025_03_03_23_23_07/styles.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testReport/2025_03_03_23_23_07/widgets/behaviors.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testReport/2025_03_03_23_23_07/widgets/categories-trend.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testReport/2025_03_03_23_23_07/widgets/categories.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testReport/2025_03_03_23_23_07/widgets/duration-trend.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testReport/2025_03_03_23_23_07/widgets/duration.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testReport/2025_03_03_23_23_07/widgets/environment.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testReport/2025_03_03_23_23_07/widgets/executors.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testReport/2025_03_03_23_23_07/widgets/history-trend.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testReport/2025_03_03_23_23_07/widgets/launch.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testReport/2025_03_03_23_23_07/widgets/retry-trend.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testReport/2025_03_03_23_23_07/widgets/severity.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testReport/2025_03_03_23_23_07/widgets/status-chart.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testReport/2025_03_03_23_23_07/widgets/suites.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testReport/2025_03_03_23_23_07/widgets/summary.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testReport/2025_03_03_23_24_40/app.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testReport/2025_03_03_23_24_40/data/behaviors.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testReport/2025_03_03_23_24_40/data/behaviors.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testReport/2025_03_03_23_24_40/data/categories.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testReport/2025_03_03_23_24_40/data/categories.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testReport/2025_03_03_23_24_40/data/packages.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testReport/2025_03_03_23_24_40/data/suites.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testReport/2025_03_03_23_24_40/data/suites.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testReport/2025_03_03_23_24_40/data/test-cases/b2bf875bcff14bab.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testReport/2025_03_03_23_24_40/data/test-cases/c99bf1e3b11dbd38.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testReport/2025_03_03_23_24_40/data/test-cases/d17d89d77c9bc648.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testReport/2025_03_03_23_24_40/data/test-cases/e5e1168416631a6a.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testReport/2025_03_03_23_24_40/data/timeline.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testReport/2025_03_03_23_24_40/export/influxDbData.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testReport/2025_03_03_23_24_40/export/mail.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testReport/2025_03_03_23_24_40/export/prometheusData.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testReport/2025_03_03_23_24_40/favicon.ico" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testReport/2025_03_03_23_24_40/history/categories-trend.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testReport/2025_03_03_23_24_40/history/duration-trend.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testReport/2025_03_03_23_24_40/history/history-trend.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testReport/2025_03_03_23_24_40/history/history.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testReport/2025_03_03_23_24_40/history/retry-trend.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testReport/2025_03_03_23_24_40/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testReport/2025_03_03_23_24_40/plugins/behaviors/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testReport/2025_03_03_23_24_40/plugins/packages/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testReport/2025_03_03_23_24_40/plugins/screen-diff/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testReport/2025_03_03_23_24_40/plugins/screen-diff/styles.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testReport/2025_03_03_23_24_40/styles.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testReport/2025_03_03_23_24_40/widgets/behaviors.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testReport/2025_03_03_23_24_40/widgets/categories-trend.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testReport/2025_03_03_23_24_40/widgets/categories.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testReport/2025_03_03_23_24_40/widgets/duration-trend.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testReport/2025_03_03_23_24_40/widgets/duration.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testReport/2025_03_03_23_24_40/widgets/environment.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testReport/2025_03_03_23_24_40/widgets/executors.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testReport/2025_03_03_23_24_40/widgets/history-trend.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testReport/2025_03_03_23_24_40/widgets/launch.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testReport/2025_03_03_23_24_40/widgets/retry-trend.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testReport/2025_03_03_23_24_40/widgets/severity.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testReport/2025_03_03_23_24_40/widgets/status-chart.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testReport/2025_03_03_23_24_40/widgets/suites.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testReport/2025_03_03_23_24_40/widgets/summary.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testReport/2025_03_03_23_25_03/app.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testReport/2025_03_03_23_25_03/data/behaviors.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testReport/2025_03_03_23_25_03/data/behaviors.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testReport/2025_03_03_23_25_03/data/categories.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testReport/2025_03_03_23_25_03/data/categories.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testReport/2025_03_03_23_25_03/data/packages.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testReport/2025_03_03_23_25_03/data/suites.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testReport/2025_03_03_23_25_03/data/suites.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testReport/2025_03_03_23_25_03/data/test-cases/50cd42e1719af10b.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testReport/2025_03_03_23_25_03/data/test-cases/7b51c6594676f8b9.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testReport/2025_03_03_23_25_03/data/test-cases/89f579acc3a8b390.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testReport/2025_03_03_23_25_03/data/test-cases/975d53ddea7c6c8d.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testReport/2025_03_03_23_25_03/data/timeline.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testReport/2025_03_03_23_25_03/export/influxDbData.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testReport/2025_03_03_23_25_03/export/mail.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testReport/2025_03_03_23_25_03/export/prometheusData.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testReport/2025_03_03_23_25_03/favicon.ico" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testReport/2025_03_03_23_25_03/history/categories-trend.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testReport/2025_03_03_23_25_03/history/duration-trend.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testReport/2025_03_03_23_25_03/history/history-trend.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testReport/2025_03_03_23_25_03/history/history.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testReport/2025_03_03_23_25_03/history/retry-trend.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testReport/2025_03_03_23_25_03/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testReport/2025_03_03_23_25_03/plugins/behaviors/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testReport/2025_03_03_23_25_03/plugins/packages/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testReport/2025_03_03_23_25_03/plugins/screen-diff/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testReport/2025_03_03_23_25_03/plugins/screen-diff/styles.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testReport/2025_03_03_23_25_03/styles.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testReport/2025_03_03_23_25_03/widgets/behaviors.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testReport/2025_03_03_23_25_03/widgets/categories-trend.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testReport/2025_03_03_23_25_03/widgets/categories.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testReport/2025_03_03_23_25_03/widgets/duration-trend.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testReport/2025_03_03_23_25_03/widgets/duration.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testReport/2025_03_03_23_25_03/widgets/environment.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testReport/2025_03_03_23_25_03/widgets/executors.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testReport/2025_03_03_23_25_03/widgets/history-trend.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testReport/2025_03_03_23_25_03/widgets/launch.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testReport/2025_03_03_23_25_03/widgets/retry-trend.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testReport/2025_03_03_23_25_03/widgets/severity.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testReport/2025_03_03_23_25_03/widgets/status-chart.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testReport/2025_03_03_23_25_03/widgets/suites.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testReport/2025_03_03_23_25_03/widgets/summary.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testReport/2025_03_03_23_30_58/app.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testReport/2025_03_03_23_30_58/data/behaviors.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testReport/2025_03_03_23_30_58/data/behaviors.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testReport/2025_03_03_23_30_58/data/categories.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testReport/2025_03_03_23_30_58/data/categories.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testReport/2025_03_03_23_30_58/data/packages.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testReport/2025_03_03_23_30_58/data/suites.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testReport/2025_03_03_23_30_58/data/suites.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testReport/2025_03_03_23_30_58/data/test-cases/26be80c3c8991397.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testReport/2025_03_03_23_30_58/data/test-cases/7b7988f13e5b8a6e.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testReport/2025_03_03_23_30_58/data/test-cases/80bf514f8066626a.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testReport/2025_03_03_23_30_58/data/test-cases/9cd8d8ec3affd6a5.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testReport/2025_03_03_23_30_58/data/timeline.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testReport/2025_03_03_23_30_58/export/influxDbData.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testReport/2025_03_03_23_30_58/export/mail.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testReport/2025_03_03_23_30_58/export/prometheusData.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testReport/2025_03_03_23_30_58/favicon.ico" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testReport/2025_03_03_23_30_58/history/categories-trend.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testReport/2025_03_03_23_30_58/history/duration-trend.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testReport/2025_03_03_23_30_58/history/history-trend.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testReport/2025_03_03_23_30_58/history/history.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testReport/2025_03_03_23_30_58/history/retry-trend.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testReport/2025_03_03_23_30_58/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testReport/2025_03_03_23_30_58/plugins/behaviors/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testReport/2025_03_03_23_30_58/plugins/packages/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testReport/2025_03_03_23_30_58/plugins/screen-diff/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testReport/2025_03_03_23_30_58/plugins/screen-diff/styles.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testReport/2025_03_03_23_30_58/styles.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testReport/2025_03_03_23_30_58/widgets/behaviors.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testReport/2025_03_03_23_30_58/widgets/categories-trend.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testReport/2025_03_03_23_30_58/widgets/categories.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testReport/2025_03_03_23_30_58/widgets/duration-trend.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testReport/2025_03_03_23_30_58/widgets/duration.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testReport/2025_03_03_23_30_58/widgets/environment.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testReport/2025_03_03_23_30_58/widgets/executors.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testReport/2025_03_03_23_30_58/widgets/history-trend.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testReport/2025_03_03_23_30_58/widgets/launch.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testReport/2025_03_03_23_30_58/widgets/retry-trend.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testReport/2025_03_03_23_30_58/widgets/severity.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testReport/2025_03_03_23_30_58/widgets/status-chart.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testReport/2025_03_03_23_30_58/widgets/suites.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testReport/2025_03_03_23_30_58/widgets/summary.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testReport/temp/2c24a93a-607b-4e93-9739-883969dd963e-result.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testReport/temp/65f84254-45f4-4333-a9ef-36bd0af35b60-container.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testReport/temp/8d16f949-6eac-4786-82e6-4935b2bb48b3-result.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testReport/temp/9ad95f60-3d7a-4fb3-9d8b-4c61c460859d-container.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testReport/temp/9e05c75c-3fd7-44ff-a62b-23a88c485964-result.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testReport/temp/a3184ce9-ff1d-49fa-9ca6-45ddd0e7a7c4-result.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testReport/temp/aebd3f26-0ddf-4665-9ad5-38e6a92c4bbb-container.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testReport/temp/fe73ec9d-c1aa-4875-93e9-68451b5af321-container.json" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -421,7 +163,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="configHttp" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="config_http" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="pythonProject—vip6" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -435,7 +177,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/common/configHttp.py" />
+      <option name="SCRIPT_NAME" value="D:\py_code\pp5\common\config_http.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -482,6 +224,29 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/common/pre_solve.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="send_email" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="pythonProject—vip6" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/common" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/common/send_email.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -574,22 +339,6 @@
       <option name="docutils_open_in_browser" value="false" />
       <method v="2" />
     </configuration>
-    <configuration name="Python tests in test_case.py" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
-      <module name="pythonProject—vip6" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/testCase" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;$PROJECT_DIR$/testCase/test_case.py&quot;" />
-      <option name="_new_targetType" value="&quot;PATH&quot;" />
-      <method v="2" />
-    </configuration>
     <configuration default="true" type="tests" factoryName="Autodetect">
       <module name="pythonProject—vip6" />
       <option name="ENV_FILES" value="" />
@@ -629,10 +378,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Python.main" />
+        <item itemvalue="Python.send_email" />
         <item itemvalue="Python.test_case" />
-        <item itemvalue="Python.configHttp" />
+        <item itemvalue="Python.config_http" />
         <item itemvalue="Python.pre_solve" />
-        <item itemvalue="Python tests.Python tests in test_case.py" />
       </list>
     </recent_temporary>
   </component>
@@ -678,7 +427,7 @@
       <workItem from="1748828679471" duration="28843000" />
       <workItem from="1748912857537" duration="24566000" />
       <workItem from="1749025020488" duration="3920000" />
-      <workItem from="1749087349867" duration="13856000" />
+      <workItem from="1749087349867" duration="18932000" />
     </task>
     <task id="LOCAL-00001" summary="Changes/2525-2-27/pytest-断言">
       <option name="closed" value="true" />
@@ -816,7 +565,15 @@
       <option name="project" value="LOCAL" />
       <updated>1748962972497</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="更新的测试测试用例，并且调试修改了代码">
+      <option name="closed" value="true" />
+      <created>1749116552492</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1749116552492</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -882,12 +639,13 @@
     <MESSAGE value="Changes/2525-3-5/添加了auto_clear/handel_path/pre_solve/send_email" />
     <MESSAGE value="Changes/2525-3-5/修改了auto_clear,main,优化了了删除报告" />
     <MESSAGE value="更新的测试用例，修改了 readData 、readconfig、pre_solve、configHttp、ding_talk。添加了 mock服务" />
-    <option name="LAST_COMMIT_MESSAGE" value="更新的测试用例，修改了 readData 、readconfig、pre_solve、configHttp、ding_talk。添加了 mock服务" />
+    <MESSAGE value="更新的测试测试用例，并且调试修改了代码" />
+    <option name="LAST_COMMIT_MESSAGE" value="更新的测试测试用例，并且调试修改了代码" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/pp5$publicAssert.coverage" NAME="publicAssert Coverage Results" MODIFIED="1749102668752" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/common" />
     <SUITE FILE_PATH="coverage/pp5$.coverage" NAME=" Coverage Results" MODIFIED="1749103782972" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/testCase" />
-    <SUITE FILE_PATH="coverage/pp5$main.coverage" NAME="main Coverage Results" MODIFIED="1749115331053" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/pp5$main.coverage" NAME="main Coverage Results" MODIFIED="1749121272539" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/pp5$log.coverage" NAME="log Coverage Results" MODIFIED="1748861468054" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/common" />
     <SUITE FILE_PATH="coverage/pp1$test_case.coverage" NAME="test_case Coverage Results" MODIFIED="1740763972495" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/testCase" />
     <SUITE FILE_PATH="coverage/pp5$configHttp.coverage" NAME="configHttp Coverage Results" MODIFIED="1749106104099" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/common" />
@@ -899,7 +657,7 @@
     <SUITE FILE_PATH="coverage/pythonproject$__init__.coverage" NAME="__init__ 覆盖结果" MODIFIED="1740468503049" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/common" />
     <SUITE FILE_PATH="coverage/pp1$.coverage" NAME=" Coverage Results" MODIFIED="1740761124094" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/testCase" />
     <SUITE FILE_PATH="coverage/pp5$readData.coverage" NAME="readData Coverage Results" MODIFIED="1748952779318" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/common" />
-    <SUITE FILE_PATH="coverage/pp5$send_email.coverage" NAME="send_email 覆盖结果" MODIFIED="1741192403399" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/common" />
+    <SUITE FILE_PATH="coverage/pp5$send_email.coverage" NAME="send_email Coverage Results" MODIFIED="1749121253556" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/common" />
     <SUITE FILE_PATH="coverage/pp1$readData.coverage" NAME="readData Coverage Results" MODIFIED="1740763387388" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/common" />
     <SUITE FILE_PATH="coverage/pp5$test_case.coverage" NAME="test_case Coverage Results" MODIFIED="1749106732033" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/testCase" />
     <SUITE FILE_PATH="coverage/pp5$flask.coverage" NAME="flask项目 Coverage Results" MODIFIED="1749092985026" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/mock" />

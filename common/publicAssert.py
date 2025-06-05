@@ -46,7 +46,7 @@ if __name__ == '__main__':
     testdata = rd.read_excel()
     print(f"预期结果{testdata[1]}")
     print(testdata[0]["expect"])
-    from common.configHttp import ConfigHttp
+    from common.config_http import ConfigHttp
     chttp = ConfigHttp(testdata[1])
     res = chttp.run()
     print(f"实际结果{res.json()}")

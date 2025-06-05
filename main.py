@@ -22,24 +22,50 @@ if __name__ == '__main__':
     time_local = time.strftime("%Y_%m_%d_%H_%M_%S", time.localtime())
     # logger.info(f"info:{time_local}")
     #设置报告的存放路径
-    report_path =  os.path.dirname(__file__) + f"/testReport/{time_local}"
+    # report_path =  os.path.dirname(__file__) + f"/testReport/{time_local}"
+    report_path = os.path.join(os.path.dirname(__file__),"testReport",time_local)
     print(report_path)
 
     #文件获取路径
-    path = os.path.dirname(__file__)+"/testReport/temp"
+    # path = os.path.dirname(__file__)+"/testReport/temp"
+
+    path = os.path.join(os.path.dirname(__file__), "testReport", "temp")
 
     # logger.info(f"info:{path}")
     #执行测试用例生成测试报告
 
     pytest.main(["-vs",f"--alluredir={path}","--clean-alluredir"])
 
+    # 确保报告路径存在，如果不存在则创建
+    if not os.path.exists(report_path):
+        os.makedirs(report_path)
+
+
     #将临时报告转化为真正的
-    os.system(f"allure generate {path} -o {report_path}")
+    # 执行 allure generate
+    # res = os.system(f"allure generate {path} -o {report_path}")
+    # if res != 0:
+    #     raise RuntimeError("Allure 报告生成失败，请检查 allure 是否已安装并配置 PATH")
+
+    import subprocess
+
+    allure_path = r"D:\Program Files\allure-2.17.3\bin\allure.bat"
+    try:
+        subprocess.run([allure_path, "generate", path, "-o", report_path], check=True)
+    except subprocess.CalledProcessError:
+        raise RuntimeError("Allure 报告生成失败，请检查 allure 是否已安装并配置 PATH")
+
+    index_file = os.path.join(report_path, "index.html")
+    if not os.path.exists(index_file):
+        raise FileNotFoundError(f"未找到报告文件: {index_file}")
+
+
+
 
     #修改标题
     from common.allure_revise import AllureRevise
 
-    AllureRevise.set_windows_title("橙好科技",report_path)
+    AllureRevise.set_windows_title("甜心科技",report_path)
     #修改报告类的标题
     AllureRevise.config_title("登录模块",report_path)
     #手动创建一个脚本用于查看报告

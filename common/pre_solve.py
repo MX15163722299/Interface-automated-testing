@@ -1,6 +1,6 @@
 #定义一个类
 import re
-from common.configHttp import ConfigHttp
+from common.config_http import ConfigHttp
 from jsonpath import jsonpath
 class PreSolve:
     #定义初始化方法
@@ -59,8 +59,8 @@ if __name__ == '__main__':
     print(ps.preSolve(data[4]))
     # 替换依赖值header,value
     data[4]["header"], data[4]["value"] = ps.preSolve(data[4])
-    from common.configHttp import ConfigHttp
-    run = ConfigHttp.run(data[4])
+    from common.config_http import Config_http
+    run = Config_http.run(data[4])
     print(run.text)
 
     print(data[4])
