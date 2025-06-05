@@ -57,12 +57,11 @@ if __name__ == '__main__':
     # print(data[3])
     ps = PreSolve(data)
     print(ps.preSolve(data[4]))
-    #
-    # str1 = "{'name':'${username}','link':'www.baidu.com'}"
-    # str2 = '{"cookie":"${Set-Cookie}"}'
-    # str3 = "123"
-    # print(ps.get_Predata(str1))
-    # print(ps.get_Predata(str2))
-    # print(ps.get_Predata(str3))
+    # 替换依赖值header,value
+    data[4]["header"], data[4]["value"] = ps.preSolve(data[4])
+    from common.configHttp import ConfigHttp
+    run = ConfigHttp.run(data[4])
+    print(run.text)
 
-    # print(ps.run_Pre("1", goal_header="Set-Cookie",goal_body="username"))
+    print(data[4])
+

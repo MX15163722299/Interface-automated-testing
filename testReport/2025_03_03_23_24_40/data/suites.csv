@@ -1,5 +1,0 @@
-"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
-"failed","Mon Mar 03 23:24:41 CST 2025","Mon Mar 03 23:24:41 CST 2025","164","testCase","test_case","TestCase","","","test_case[dic1]",""
-"failed","Mon Mar 03 23:24:42 CST 2025","Mon Mar 03 23:24:42 CST 2025","83","testCase","test_case","TestCase","","","test_case[dic3]",""
-"passed","Mon Mar 03 23:24:41 CST 2025","Mon Mar 03 23:24:41 CST 2025","601","testCase","test_case","TestCase","","","test_case[dic0]",""
-"passed","Mon Mar 03 23:24:42 CST 2025","Mon Mar 03 23:24:42 CST 2025","73","testCase","test_case","TestCase","","","test_case[dic2]",""

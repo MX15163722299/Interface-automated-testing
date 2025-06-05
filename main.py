@@ -15,12 +15,12 @@ import pytest
 import shutil
 from common.send_email import SendEmail
 from common.auto_clear import autoClear
-from common.log import logger
+# from common.log import logger
 
 if __name__ == '__main__':
     #获取当前的时间
     time_local = time.strftime("%Y_%m_%d_%H_%M_%S", time.localtime())
-    logger.info(f"info:{time_local}")
+    # logger.info(f"info:{time_local}")
     #设置报告的存放路径
     report_path =  os.path.dirname(__file__) + f"/testReport/{time_local}"
     print(report_path)
@@ -28,7 +28,7 @@ if __name__ == '__main__':
     #文件获取路径
     path = os.path.dirname(__file__)+"/testReport/temp"
 
-    logger.info(f"info:{path}")
+    # logger.info(f"info:{path}")
     #执行测试用例生成测试报告
 
     pytest.main(["-vs",f"--alluredir={path}","--clean-alluredir"])
@@ -39,7 +39,7 @@ if __name__ == '__main__':
     #修改标题
     from common.allure_revise import AllureRevise
 
-    AllureRevise.set_windows_title("甜心科技",report_path)
+    AllureRevise.set_windows_title("橙好科技",report_path)
     #修改报告类的标题
     AllureRevise.config_title("登录模块",report_path)
     #手动创建一个脚本用于查看报告

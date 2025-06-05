@@ -39,7 +39,10 @@ class ConfigHttp(object):
         return response
 if __name__ == '__main__':
     #测试数据
-    data1 = {'id': 2.0, 'title': '用户登录', 'interfaceUrl': 'http://localhost:5000/login', 'name': 'login', 'contentType': 'form', 'method': 'post', 'file_var': '', 'file_path': '', 'value': "{'username': 'user1', 'password': 'p001'}", 'header': '{}', 'rely': 'n', 'caseid': '', 'expect': "{'errorCode': 0}", 'extract': "[{'Set-Cookie': 'uid'}]"}
-    ch = ConfigHttp(data1)
+    # data1 = {'id': 2.0, 'title': '用户登录', 'interfaceUrl': 'http://localhost:5000/login', 'name': 'login', 'contentType': 'form', 'method': 'post', 'file_var': '', 'file_path': '', 'value': "{'username': 'user1', 'password': 'p001'}", 'header': '{}', 'rely': 'n', 'caseid': '', 'expect': "{'errorCode': 0}", 'extract': "[{'Set-Cookie': 'uid'}]"}
+    from common.readData import ReadData
+    r = ReadData()
+    data = r.read_excel()
+    ch = ConfigHttp(data[1])
     res = ch.run()
     print(res.text)

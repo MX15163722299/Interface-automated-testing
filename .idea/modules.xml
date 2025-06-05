@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/../Python_pytest学习/.idea/Python_pytest学习.iml" filepath="$PROJECT_DIR$/../Python_pytest学习/.idea/Python_pytest学习.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/pythonProject—vip6.iml" filepath="$PROJECT_DIR$/.idea/pythonProject—vip6.iml" />
     </modules>
   </component>

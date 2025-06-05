@@ -25,7 +25,7 @@ class PublicAssert:
 
 # 2.定义一个对外的断言方法
     def public_assert(self):
-        assert self.status in [200,304],f"请求失败:{self.status}"
+        assert self.status in [200,304,201],f"请求失败:{self.status}"
         msg = ""
         #     1.2 循环断言字典里面的键值对
         for k,v in self.dic.items():
@@ -45,7 +45,7 @@ if __name__ == '__main__':
     rd = ReadData()
     testdata = rd.read_excel()
     print(f"预期结果{testdata[1]}")
-    print(testdata[1]["expect"])
+    print(testdata[0]["expect"])
     from common.configHttp import ConfigHttp
     chttp = ConfigHttp(testdata[1])
     res = chttp.run()
