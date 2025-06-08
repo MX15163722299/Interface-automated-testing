@@ -36,5 +36,5 @@ class DingTalk:
 
 if __name__ == '__main__':
     dt = DingTalk()
-    # dt.send_msg('test：孟旭')
-    dt.send_link('test：谢广坤','https://mp.weixin.qq.com/s/CAi8GRJXQZwv4AoFCYe9hA')
+    dt.send_msg('test：孟旭-接口测试报告已发邮箱')
+    # dt.send_link('test：谢广坤','https://mp.weixin.qq.com/s/CAi8GRJXQZwv4AoFCYe9hA')
