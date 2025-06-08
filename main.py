@@ -22,12 +22,10 @@ if __name__ == '__main__':
     time_local = time.strftime("%Y_%m_%d_%H_%M_%S", time.localtime())
     # logger.info(f"info:{time_local}")
     #设置报告的存放路径
-    # report_path =  os.path.dirname(__file__) + f"/testReport/{time_local}"
     report_path = os.path.join(os.path.dirname(__file__),"testReport",time_local)
     print(report_path)
 
     #文件获取路径
-    # path = os.path.dirname(__file__)+"/testReport/temp"
 
     path = os.path.join(os.path.dirname(__file__), "testReport", "temp")
 
@@ -40,12 +38,7 @@ if __name__ == '__main__':
     if not os.path.exists(report_path):
         os.makedirs(report_path)
 
-
     #将临时报告转化为真正的
-    # 执行 allure generate
-    # res = os.system(f"allure generate {path} -o {report_path}")
-    # if res != 0:
-    #     raise RuntimeError("Allure 报告生成失败，请检查 allure 是否已安装并配置 PATH")
 
     import subprocess
 
@@ -58,9 +51,6 @@ if __name__ == '__main__':
     index_file = os.path.join(report_path, "index.html")
     if not os.path.exists(index_file):
         raise FileNotFoundError(f"未找到报告文件: {index_file}")
-
-
-
 
     #修改标题
     from common.allure_revise import AllureRevise
