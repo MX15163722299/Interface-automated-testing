@@ -1,57 +1,53 @@
 import logging
 import os
-from fileinput import filename
 from logging.handlers import TimedRotatingFileHandler
 import time
-"""
-步骤分析
-1.创建记录器级别
-2.配置日子记录器级别
-3.配置日志记录器的输出格式
-4.创建并且添加日志记录hander
-5.创建并且添加日志记录器文件
-6.对外提供日志记录器
 
-#有bug，设置了backupCount=3,但是无法自动删除日志。会一直叠加log.txt 的数量
-
-"""
-# 配置日志存放的路径
+# 日志保存路径
 path = os.path.dirname(os.path.dirname(__file__)) + "/testLog"
+if not os.path.exists(path):
+    os.makedirs(path)
+
 def log():
-    #创建日志记录器
     logger = logging.getLogger("test")
-    #配置日志记录器级别
+
+    # 避免重复添加 handler（否则会重复写入 + 锁死文件）
+    if logger.hasHandlers():
+        return logger
+
     logger.setLevel(logging.DEBUG)
-    #配置日志记录器的输出格式
-    format1 = logging.Formatter(
-        "%(asctime)s - %(levelname)s - %(message)s")
-    #创建并且添加日志记录器
+    format1 = logging.Formatter("日志:%(asctime)s - 级别:%(levelname)s - %(message)s")
+
+    # 控制台输出
     sh = logging.StreamHandler()
     sh.setFormatter(format1)
-
     logger.addHandler(sh)
 
+    # 文件日志处理器（加 delay 避免文件锁，轮转安全）
+    log_file = os.path.join(path, "log.log")
     fh = TimedRotatingFileHandler(
-        filename=path + "/log.txt",
-        when='M',
+        filename=log_file,
+        when='S',
+        interval=5,              # 每 5 秒轮转一次（建议别用1秒，太频繁）
+        backupCount=5,
         encoding='utf-8',
-        backupCount=3,
-        interval=1,
-        utc=True
+        delay=True               # ✅ 延迟打开文件，避免 WinError 32
     )
-    fh.suffix = "%Y-%m-%d_%H-%M-%S"  # 文件名后缀格式
+    fh.suffix = "%Y-%m-%d-%H-%M-%S"
     fh.setFormatter(format1)
-
     logger.addHandler(fh)
+
     return logger
 
+# 单例 logger
+logger = log()
 
 if __name__ == '__main__':
-
-    log = log()
-    for i in range(6):
-        log.debug("我是")
-        time.sleep(1)
-    # import os
-    # os.remove("D:/py_code/pp5/testLog/log.txt.2025-03-03_06-37-03")  # 看是否能正常删除
-
+    logger.info("我是info")
+    logger.debug("debug")
+    logger.error("error")
+    logger.warning("warning")
+    logger.critical("critical")
+    # for i in range(6):
+    #     logger.debug("我是 %d", i)
+    #     time.sleep(1)

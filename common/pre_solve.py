@@ -1,78 +1,154 @@
-#定义一个类
+import json
 import re
-from common.configHttp import ConfigHttp
 from jsonpath import jsonpath
+from common.config_http import ConfigHttp
+
+# 模拟响应结构统一封装（兼容 header 和 json）
+class DummyResponse:
+    def __init__(self, json_data, headers=None):
+        self._json = json_data
+        self.headers = headers or {}
+
+    def json(self):
+        return self._json
+
+
 class PreSolve:
-    #定义初始化方法
-    def __init__(self,testdata):
-        self.testdata = testdata
+    def __init__(self, all_test_data):
+        """
+        :param all_test_data:
+        作用：模拟 HTTP 响应对象，用于统一处理响应数据和 header。
+        参数说明：
+        json_data: 响应的 JSON 数据内容。
+        headers: 可选参数，表示响应头信息，默认为 {}。作用：模拟 HTTP 响应对象，用于统一处理响应数据和 header。
+        参数说明：
+        json_data: 响应的 JSON 数据内容。
+        headers: 可选参数，表示响应头信息，默认为 {}。
 
+        """
+        self.all_data = all_test_data  # 所有测试用例
+        self.res_dict = {}             # 缓存所有已执行过的前置响应
 
-    #获取所有测试用例并且绑定自身属性
+    def preSolve(self, dic):
+        # 1. 获取所有 ${id:field} 格式的占位符
+        pattern = re.compile(r"\${(\d+):(.+?)}")
+        all_placeholders = pattern.findall(json.dumps(dic))  # 返回的是列表：[('1', 'id'), ('1', 'name')]
 
+        # 2. 去重并遍历依赖ID，执行依赖接口
+        for dep_id, _ in set(all_placeholders):
+            self.execute_dependency(dep_id)
 
-    #定义一个方法：根据当前的用例执行依赖前置并且替换依赖字段
-    def preSolve(self,dic):
-        rely = dic["rely"]
-        caseId = dic["caseid"]
-        header = dic["header"]
-        value = dic["value"]
-        print(f"关键字段{rely}\n{caseId}\n{header}\n{value}")
-        if rely.lower() == "y" and caseId != "":
-            goal_header = self.get_Predata(header)
-            goal_body = self.get_Predata(value)
-            print(f"请求头依赖：{goal_header}\n请求体依赖：{goal_body}")
-            h,b = self.run_Pre(caseId,goal_header,goal_body)
-            print(f"请求头：{h}\n请求体{b}")
-            if h != None:
-                header = header.replace("${"+goal_header+"}",h)
-            if b != None:
-                value = value.replace("${"+goal_body+"}",b)
-            return header,value
+        # 3. 替换当前接口的 value 和 header
+        header, value = self.process_row(dic, self.res_dict)
 
-            #根据正则找依赖字段
+        # 4. 替换结果写回原字典（注意类型转换）
+        dic["header"] = json.dumps(header, ensure_ascii=False) if isinstance(header, dict) else header
+        dic["value"] = json.dumps(value, ensure_ascii=False) if isinstance(value, dict) else value
 
-        else:
-            return header,value
-    def get_Predata(self,data):
-        res = re.findall(r"\${(.*?)}", data)
+        return header, value
 
-        if len(res) != 0:
-            return res[0]
-        else:
-            return None
-    def run_Pre(self,caseid,goal_header = None,goal_body = None):
+    def execute_dependency(self, dep_id):
+        #如果这个依赖接口已经请求过了，就不重复请求，直接跳过
+        if dep_id in self.res_dict:
+            return  # 已执行，跳过
+        #在 self.all_data 所有用例中，找第一个满足条件 id == dep_id 的用例，如果找不到，就返回 None
+        dep_case = next(
+            (case for case in self.all_data
+             if str(int(float(case.get("id", -1)))) == dep_id),
+            None
+        )
 
-    #判断是否有依赖rely 是否为 Y,
-        data = self.testdata[int(caseid)-1]
-        ch = ConfigHttp(data)
-        res = ch.run()
-        print(res.headers)
-        print(res.json())
+        if not dep_case:
+            print(f"未找到依赖的用例 ID={dep_id}")
+            return
 
-        if goal_header != None:
-            goal_header = res.headers[goal_header]
-        if goal_body != None:
-            goal_body = jsonpath(res.json(),"$.."+goal_body)[0]
-        return goal_header,goal_body
+        print(f"执行依赖用例 ID={dep_id}，接口：{dep_case.get('name')}")
+        ch = ConfigHttp(dep_case)
+        response = ch.run()
 
+        try:
+            res_json = response.json()
 
+        #  用空 {}    占位，让程序还能继续跑，至少不会中断整个测试流程。
+        except:
+            res_json = {}
 
-    #没有依赖直接获取入参值value
+        self.res_dict[dep_id] = DummyResponse(res_json, response.headers)
+
+    @classmethod
+    def recursive_replace(cls, data, res_dict):
+        pattern = re.compile(r"\${(\d+):(.+?)}")
+
+        if isinstance(data, str):
+            matches = pattern.findall(data)
+            for case_id, field in matches:
+                response = res_dict.get(case_id)
+                if not response:
+                    continue
+
+                if field.lower() == "set-cookie":
+                    raw_cookie = response.headers.get("Set-Cookie", "")
+                    val = raw_cookie.split(";")[0]  # ⚠️ 仅取 uid=u001
+                else:
+                    val = jsonpath(response.json(), f"$..{field}")
+                    val = val[0] if val else ""
+
+                data = data.replace(f"${{{case_id}:{field}}}", str(val))
+            return data
+
+        elif isinstance(data, dict):
+            return {k: cls.recursive_replace(v, res_dict) for k, v in data.items()}
+
+        elif isinstance(data, list):
+            return [cls.recursive_replace(i, res_dict) for i in data]
+
+        return data
+
+    @classmethod
+    def process_row(cls, row_dict, res_dict):
+        try:
+            """
+            row_dict.get("value", "{}")
+              尝试获取 'value' 字段；如果没有，就返回 '{}'
+            or "{}"
+               如果前面即使存在，但是空字符串 "" 或 None 或 False，也用 '{}' 替代
+            """
+            raw_value = row_dict.get("value", "{}") or "{}"
+            raw_header = row_dict.get("header", "{}") or "{}"
+
+            try:
+                value = json.loads(raw_value)
+            except Exception:
+                value = raw_value
+
+            try:
+                header = json.loads(raw_header)
+            except Exception:
+                header = raw_header
+
+            replaced_value = cls.recursive_replace(value, res_dict)
+            replaced_header = cls.recursive_replace(header, res_dict)
+
+            print(f"替换后 header: {replaced_header}")
+            print(f"替换后 value: {replaced_value}")
+
+            return replaced_header, replaced_value
+
+        except Exception as e:
+            print(f"用例处理失败：{e}")
+            return {}, {}
 
 if __name__ == '__main__':
     from common.readData import ReadData
     rd = ReadData()
     data = rd.read_excel()
-    # print(data[3])
-    ps = PreSolve(data)
-    print(ps.preSolve(data[3]))
-    #
-    # str1 = "{'name':'${username}','link':'www.baidu.com'}"
-    # str2 = '{"cookie":"${Set-Cookie}"}'
-    # str3 = "123"
-    # print(ps.get_Predata(str1))
-    # print(ps.get_Predata(str2))
-    # print(ps.get_Predata(str3))
 
-    # print(ps.run_Pre("1", goal_header="Set-Cookie",goal_body="username"))
+    ps = PreSolve(data)
+    row_data = data[6]  # 用例行数据
+    value, header = ps.preSolve(row_data)
+
+    from common.config_http import ConfigHttp
+    ch = ConfigHttp(row_data)
+    response = ch.run()
+    print(f"响应: {response.text}")
+    print(row_data)

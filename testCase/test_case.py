@@ -1,10 +1,10 @@
-
 import pytest
-from common.readData import ReadData
 import requests
-from common.configHttp import ConfigHttp
-from common.publicAssert import PublicAssert
+from common.readData import ReadData
 from common.pre_solve import PreSolve
+from common.config_http import ConfigHttp
+from common.publicAssert import PublicAssert
+
 '''
 导包
 1.获取测试数据
@@ -21,41 +21,22 @@ class TestCase:
     @pytest.mark.parametrize("dic",test_data)
     def test_case(self,dic):
 
-        #实例化，解决依赖
-        ps = PreSolve(test_data)
-        #替换依赖值header,value
-        dic["header"],dic["value"] = ps.preSolve(dic)
-       #实例化公共请求类
-        ch = ConfigHttp(dic)
-       #调用请求方法
-        response = ch.run()
-        print(f"结果：========={response}")
-        # assert str(res_dict["errorCode"]) == str(eval(dic["expect"])["errorCode"]),"预期结果与实际结果不符合"
-        # try:
-        #     assert str(res_dict["errorCode"]) == str(eval(dic["expect"])["errorCode"]),"预期结果与实际结果不符合"
-        # except Exception as e:
-        #     print(f"\n用例执行失败")
-        #     raise
+       # 实例化依赖处理器
+       ps = PreSolve(test_data)
 
+       # 替换依赖字段，会自动执行依赖接口，并更新 dic["value"] 和 dic["header"]
+       ps.preSolve(dic)
 
-       # 实例化断言
-        pA = PublicAssert(dic,response)
-        pA.public_assert()
+       # 实例化请求类
+       ch = ConfigHttp(dic)
+       response = ch.run()
+
+       print(f"✅ 执行结果：{response}")
+
+       # 断言
+       pA = PublicAssert(dic, response)
+       pA.public_assert()
 
 if __name__ == '__main__':
     pytest.main(["-vs"])
-#
-# import pytest
-# list1 = [1, 2, 3,4,5]
-# list2 = [[1,2],[2,2],[2,3],[2,4],[2,5]]
-# class TestClass:
-#     # @pytest.mark.parametrize("args",list1)
-#     # def test_case(self,args):
-#     #     print(f"\n执行测试用例的数据{args}")
-#     #     assert args == 5,"这个数不是5"
-#     @pytest.mark.parametrize("num1,num2",list2)
-#     def test_case2(self,num1,num2):
-#         print(f"\n执行测试用例的参数{num1}/{num2}")
-#         assert num1 == num2,"两个数不相等"
-# if __name__ == '__main__':
-#     pytest.main(["-vs"])
+
