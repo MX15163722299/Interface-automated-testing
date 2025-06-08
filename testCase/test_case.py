@@ -21,15 +21,15 @@ class TestCase:
     @pytest.mark.parametrize("dic",test_data)
     def test_case(self,dic):
 
-        #实例化，解决依赖
-        ps = PreSolve(test_data)
-        #替换依赖值header,value
-        dic["header"],dic["value"] = ps.preSolve(dic)
-       #实例化公共请求类
-        ch = ConfigHttp(dic)
-       #调用请求方法
-        response = ch.run()
-        print(f"结果：========={response}")
+       #  #实例化，解决依赖
+       #  ps = PreSolve(test_data)
+       #  #替换依赖值header,value
+       #  dic["header"],dic["value"] = ps.preSolve(dic)
+       # #实例化公共请求类
+       #  ch = ConfigHttp(dic)
+       # #调用请求方法
+       #  response = ch.run()
+       #  print(f"结果：========={response}")
         # assert str(res_dict["errorCode"]) == str(eval(dic["expect"])["errorCode"]),"预期结果与实际结果不符合"
         # try:
         #     assert str(res_dict["errorCode"]) == str(eval(dic["expect"])["errorCode"]),"预期结果与实际结果不符合"
@@ -38,9 +38,39 @@ class TestCase:
         #     raise
 
 
-       # 实例化断言
-        pA = PublicAssert(dic,response)
-        pA.public_assert()
+       # test_data 是你预先执行好的接口依赖响应池
+       # # 假设 test_data 是接口依赖响应池
+       # ps = PreSolve(test_data)
+       #
+       # # 替换 value 和 header 占位符
+       #
+       # value, header = PreSolve.process_row(dic, test_data)
+       # # 发起请求
+       # ch = ConfigHttp(dic)
+       # response = ch.run()
+       #
+       # print(f"✅ 执行结果：{response}")
+       #
+       # # 实例化断言类并执行断言
+       # pA = PublicAssert(dic, response)
+       # pA.public_assert()
+
+       # 实例化依赖处理器
+       ps = PreSolve(test_data)
+
+       # 替换依赖字段，会自动执行依赖接口，并更新 dic["value"] 和 dic["header"]
+       ps.preSolve(dic)
+
+       # 实例化请求类
+       ch = ConfigHttp(dic)
+       response = ch.run()
+
+       print(f"✅ 执行结果：{response}")
+
+       # 断言
+       pA = PublicAssert(dic, response)
+       pA.public_assert()
+
 
 if __name__ == '__main__':
     pytest.main(["-vs"])
