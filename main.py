@@ -7,7 +7,6 @@
 
 """
 
-
 import os
 import time
 from shutil import make_archive
@@ -55,7 +54,7 @@ if __name__ == '__main__':
     #修改标题
     from common.allure_revise import AllureRevise
 
-    AllureRevise.set_windows_title("甜心科技",report_path)
+    AllureRevise.set_windows_title("嘿嘿科技",report_path)
     #修改报告类的标题
     AllureRevise.config_title("登录模块",report_path)
     #手动创建一个脚本用于查看报告

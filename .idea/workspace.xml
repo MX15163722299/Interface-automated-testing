@@ -4,13 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7136bfb8-06ba-4c27-9bc9-aee6ad084731" name="Changes" comment="除了日志，都调试完成">
-      <change afterPath="$PROJECT_DIR$/testData/接口自动化测试用例维护说明文档.md" afterDir="false" />
+    <list default="true" id="7136bfb8-06ba-4c27-9bc9-aee6ad084731" name="Changes" comment="当前已支持：&#10;✅ 多接口依赖同时存在&#10;✅ 嵌套字段提取（支持多级、数组）&#10;✅ header + body 替换&#10;✅ 自定义 Set-Cookie 抽取规则（默认 ; 截断取第一段）&#10;所有依赖接口在执行当前用例前自动运行一次，并将其响应结果缓存到 res_dict 中，无需手动执行依赖">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/pre_solve.py" beforeDir="false" afterPath="$PROJECT_DIR$/common/pre_solve.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/config_http.py" beforeDir="false" afterPath="$PROJECT_DIR$/common/config_http.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/common/readData.py" beforeDir="false" afterPath="$PROJECT_DIR$/common/readData.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testCase/test_case.py" beforeDir="false" afterPath="$PROJECT_DIR$/testCase/test_case.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testData/data.xls" beforeDir="false" afterPath="$PROJECT_DIR$/testData/data.xls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testData/data.json" beforeDir="false" afterPath="$PROJECT_DIR$/testData/data.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testData/data.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/testData/data.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,6 +72,7 @@
     "Python 测试.Python 测试 (test_email.py 内).executor": "Run",
     "Python.__init__.executor": "Run",
     "Python.configHttp.executor": "Run",
+    "Python.config_http.executor": "Run",
     "Python.ding_talk.executor": "Run",
     "Python.email.executor": "Run",
     "Python.flask项目.executor": "Run",
@@ -115,7 +116,30 @@
       <recent name="D:\py_code\Python_pytest学习" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.main">
+  <component name="RunManager" selected="Python.config_http">
+    <configuration name="config_http" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="pythonProject—vip6" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/common" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/common/config_http.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="pythonProject—vip6" />
       <option name="ENV_FILES" value="" />
@@ -154,29 +178,6 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/common/pre_solve.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="pre_solve_1" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="pythonProject—vip6" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/common" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/common/pre_solve_1.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -233,11 +234,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.config_http" />
+        <item itemvalue="Python.readData" />
         <item itemvalue="Python.main" />
         <item itemvalue="Python.pre_solve" />
         <item itemvalue="Python.test_case" />
-        <item itemvalue="Python.readData" />
-        <item itemvalue="Python.pre_solve_1" />
       </list>
     </recent_temporary>
   </component>
@@ -287,7 +288,7 @@
       <workItem from="1749179155917" duration="613000" />
       <workItem from="1749180037083" duration="1221000" />
       <workItem from="1749196056911" duration="15761000" />
-      <workItem from="1749355850501" duration="9004000" />
+      <workItem from="1749355850501" duration="25640000" />
     </task>
     <task id="LOCAL-00001" summary="Changes/2525-2-27/pytest-断言">
       <option name="closed" value="true" />
@@ -441,7 +442,23 @@
       <option name="project" value="LOCAL" />
       <updated>1749121402094</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="当前已支持：&#10;✅ 多接口依赖同时存在&#10;✅ 嵌套字段提取（支持多级、数组）&#10;✅ header + body 替换&#10;✅ 自定义 Set-Cookie 抽取规则（默认 ; 截断取第一段）&#10;所有依赖接口在执行当前用例前自动运行一次，并将其响应结果缓存到 res_dict 中，无需手动执行依赖">
+      <option name="closed" value="true" />
+      <created>1749365610036</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1749365610036</updated>
+    </task>
+    <task id="LOCAL-00021" summary="当前已支持：&#10;✅ 多接口依赖同时存在&#10;✅ 嵌套字段提取（支持多级、数组）&#10;✅ header + body 替换&#10;✅ 自定义 Set-Cookie 抽取规则（默认 ; 截断取第一段）&#10;所有依赖接口在执行当前用例前自动运行一次，并将其响应结果缓存到 res_dict 中，无需手动执行依赖">
+      <option name="closed" value="true" />
+      <created>1749382678583</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1749382678583</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -509,16 +526,18 @@
     <MESSAGE value="更新的测试用例，修改了 readData 、readconfig、pre_solve、configHttp、ding_talk。添加了 mock服务" />
     <MESSAGE value="更新的测试测试用例，并且调试修改了代码" />
     <MESSAGE value="除了日志，都调试完成" />
-    <option name="LAST_COMMIT_MESSAGE" value="除了日志，都调试完成" />
+    <MESSAGE value="当前已支持：&#10;✅ 多接口依赖同时存在&#10;✅ 嵌套字段提取（支持多级、数组）&#10;✅ header + body 替换&#10;✅ 自定义 Set-Cookie 抽取规则（默认 ; 截断取第一段）&#10;所有依赖接口在执行当前用例前自动运行一次，并将其响应结果缓存到 res_dict 中，无需手动执行依赖" />
+    <option name="LAST_COMMIT_MESSAGE" value="当前已支持：&#10;✅ 多接口依赖同时存在&#10;✅ 嵌套字段提取（支持多级、数组）&#10;✅ header + body 替换&#10;✅ 自定义 Set-Cookie 抽取规则（默认 ; 截断取第一段）&#10;所有依赖接口在执行当前用例前自动运行一次，并将其响应结果缓存到 res_dict 中，无需手动执行依赖" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/pp5$publicAssert.coverage" NAME="publicAssert Coverage Results" MODIFIED="1749102668752" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/common" />
     <SUITE FILE_PATH="coverage/pp5$.coverage" NAME=" Coverage Results" MODIFIED="1749103782972" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/testCase" />
-    <SUITE FILE_PATH="coverage/pp5$main.coverage" NAME="main Coverage Results" MODIFIED="1749365420054" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/pp5$main.coverage" NAME="main Coverage Results" MODIFIED="1749383339794" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/pp5$log.coverage" NAME="log Coverage Results" MODIFIED="1748861468054" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/common" />
     <SUITE FILE_PATH="coverage/pp1$test_case.coverage" NAME="test_case Coverage Results" MODIFIED="1740763972495" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/testCase" />
     <SUITE FILE_PATH="coverage/pp5$configHttp.coverage" NAME="configHttp Coverage Results" MODIFIED="1749106104099" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/common" />
     <SUITE FILE_PATH="coverage/pythonproject$readData.coverage" NAME="readData 覆盖结果" MODIFIED="1740468439243" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/common" />
+    <SUITE FILE_PATH="coverage/pp5$config_http.coverage" NAME="config_http Coverage Results" MODIFIED="1749392514316" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/common" />
     <SUITE FILE_PATH="coverage/pp5$pre_solve_1.coverage" NAME="pre_solve_1 Coverage Results" MODIFIED="1749356001581" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/common" />
     <SUITE FILE_PATH="coverage/pp5$pre_solve.coverage" NAME="pre_solve Coverage Results" MODIFIED="1749364401945" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/common" />
     <SUITE FILE_PATH="coverage/pythonproject$.coverage" NAME=" 覆盖结果" MODIFIED="1740667936126" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../Python_pytest学习/pytest_学习" />
@@ -526,7 +545,7 @@
     <SUITE FILE_PATH="coverage/pythonproject$test_case1.coverage" NAME="test_case1 覆盖结果" MODIFIED="1740668534682" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../Python_pytest学习/pytest_学习" />
     <SUITE FILE_PATH="coverage/pythonproject$__init__.coverage" NAME="__init__ 覆盖结果" MODIFIED="1740468503049" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/common" />
     <SUITE FILE_PATH="coverage/pp1$.coverage" NAME=" Coverage Results" MODIFIED="1740761124094" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/testCase" />
-    <SUITE FILE_PATH="coverage/pp5$readData.coverage" NAME="readData Coverage Results" MODIFIED="1749359057967" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/common" />
+    <SUITE FILE_PATH="coverage/pp5$readData.coverage" NAME="readData Coverage Results" MODIFIED="1749392301660" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/common" />
     <SUITE FILE_PATH="coverage/pp5$send_email.coverage" NAME="send_email Coverage Results" MODIFIED="1749121253556" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/common" />
     <SUITE FILE_PATH="coverage/pp1$readData.coverage" NAME="readData Coverage Results" MODIFIED="1740763387388" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/common" />
     <SUITE FILE_PATH="coverage/pp5$test_case.coverage" NAME="test_case Coverage Results" MODIFIED="1749362993975" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/testCase" />

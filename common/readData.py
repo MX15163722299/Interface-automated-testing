@@ -17,7 +17,9 @@ class ReadData():
     def __init__(self):
         # 1.1
         # 获取文件路径
-        self.path_name = os.path.dirname(os.path.dirname(__file__)) + "/testData/data.xls"
+        # self.path_name = os.path.dirname(os.path.dirname(__file__)) + "/testData/data.xls"
+        base_dir = os.path.dirname(os.path.dirname(__file__))
+        self.path_name = os.path.join(base_dir, "testData", "data.xls")
         print(self.path_name)
         # 1.2
         # 打开并且读取excel
@@ -55,33 +57,35 @@ class ReadData():
 
     def read_json(self):
         #1.1 获取文件路径
-        json_path = os.path.dirname(os.path.dirname(__file__)) + "/testData/data.json"
+        # json_path = os.path.dirname(os.path.dirname(__file__)) + "/testData/data.json"
+        base_dir = os.path.dirname(os.path.dirname(__file__))
+        json_path = os.path.join(base_dir, "testData", "data.json")
         #1.2 打开json文件
-        with open(json_path,'r') as f:
+        with open(json_path,'r',encoding='utf-8') as f:
             #1.3 将json 转化为字典并且存到变量里面
             testdata = json.load(f)
             #1.4 读取字典内所有的value 转化为列表
-            testdata1 = list(testdata.values())
-        return testdata1
+            # testdata1 = list(testdata.values())
+        return testdata
 
     def read_yaml(self):
-        yaml_path = os.path.dirname(os.path.dirname(__file__)) + "/testData/data.yaml"
-        with open(yaml_path,'r') as f:
-            testdata = yaml.load(f)
-            testdata2 = list(testdata.values())
-        return testdata2
+        base_dir = os.path.dirname(os.path.dirname(__file__))
+        yaml_path = os.path.join(base_dir, "testData", "data.yaml")
+
+        with open(yaml_path,'r',encoding='utf-8') as f:
+            testdata = yaml.safe_load(f)
+        return testdata
 
 if __name__ == '__main__':
     re = ReadData()
     rep = re.read_excel()
     print(rep[6])
-    # repp = rep[1]["expect"]
-    # # print(repp)
-    # dict_data = eval(repp)
-    # print(dict_data)
-    # print(dict_data["errorCode"])
-    # # expect = rep["expect"]
-    # #
-    # # print(expect)
+
+    res = re.read_json()
+    print(res[6])
+
+    res = re.read_yaml()
+    print(res[6])
+
 
 
