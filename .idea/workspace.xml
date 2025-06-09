@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7136bfb8-06ba-4c27-9bc9-aee6ad084731" name="Changes" comment="更新了包和模块的命名规范">
-      <change beforePath="$PROJECT_DIR$/common/handle_path.py" beforeDir="false" afterPath="$PROJECT_DIR$/common/handle_path.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testcase/test_case.py" beforeDir="false" afterPath="$PROJECT_DIR$/testcase_123/test_case.py" afterDir="false" />
-    </list>
+    <list default="true" id="7136bfb8-06ba-4c27-9bc9-aee6ad084731" name="Changes" comment="更新了包和模块的命名规范" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -482,7 +479,31 @@
       <option name="project" value="LOCAL" />
       <updated>1749443692819</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="更新了包和模块的命名规范">
+      <option name="closed" value="true" />
+      <created>1749444117442</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1749444117442</updated>
+    </task>
+    <task id="LOCAL-00026" summary="更新了包和模块的命名规范">
+      <option name="closed" value="true" />
+      <created>1749444244031</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1749444244031</updated>
+    </task>
+    <task id="LOCAL-00027" summary="更新了包和模块的命名规范">
+      <option name="closed" value="true" />
+      <created>1749444306959</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1749444306959</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
