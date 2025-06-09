@@ -1,6 +1,6 @@
 import pytest
 import requests
-from common.readData import ReadData
+from common.read_data import ReadData
 from common.pre_solve import PreSolve
 from common.config_http import ConfigHttp
 from common.publicAssert import PublicAssert
@@ -16,10 +16,10 @@ from common.publicAssert import PublicAssert
 '''
 rd = ReadData()
 test_data = rd.read_excel()
-# print(test_data)
+from common.conf_test import db
 class TestCase:
     @pytest.mark.parametrize("dic",test_data)
-    def test_case(self,dic):
+    def test_case(self,dic,db):
 
        # 实例化依赖处理器
        ps = PreSolve(test_data)
@@ -34,7 +34,7 @@ class TestCase:
        print(f"✅ 执行结果：{response}")
 
        # 断言
-       pA = PublicAssert(dic, response)
+       pA = PublicAssert(dic, response,db)
        pA.public_assert()
 
 if __name__ == '__main__':

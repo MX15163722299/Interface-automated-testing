@@ -9,7 +9,7 @@ from email.mime.text import MIMEText
 from email.header import Header
 
 from common.handle_path import CONFIG_DIR
-from common.readConfig import ReadConfig
+from common.read_config import ReadConfig
 
 # 实例化
 rc = ReadConfig()

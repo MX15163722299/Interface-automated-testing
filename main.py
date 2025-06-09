@@ -15,6 +15,7 @@ import shutil
 from common.send_email import SendEmail
 from common.auto_clear import autoClear
 from common.log import logger
+from common.conf_test import db
 
 if __name__ == '__main__':
     #获取当前的时间

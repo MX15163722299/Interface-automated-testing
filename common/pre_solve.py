@@ -139,7 +139,7 @@ class PreSolve:
             return {}, {}
 
 if __name__ == '__main__':
-    from common.readData import ReadData
+    from common.read_data import ReadData
     rd = ReadData()
     data = rd.read_excel()
 

@@ -35,8 +35,8 @@ class ReadConfig:
         return self.conf.get(section,option)
 
     def get_config(self,*args):
-        print(args)
-        print(args[0])
+        # print(args)
+        # print(args[0])
         if len(args) == 1:
             return self.conf.items(args[0])
         else:
@@ -44,5 +44,5 @@ class ReadConfig:
 if __name__ == '__main__':
     re = ReadConfig()
     # print(re.get_options("mysql"))
-    # print(re.get_option("mysql","host"))
-    print(re.get_config("email","sender"))
+    print(re.get_option("mysql","host"))
+    # print(re.get_config("email","sender"))

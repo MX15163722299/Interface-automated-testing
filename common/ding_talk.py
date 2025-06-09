@@ -1,6 +1,6 @@
 
 import requests
-from common.readConfig import ReadConfig
+from common.read_config import ReadConfig
 rc = ReadConfig()
 
 class DingTalk:
