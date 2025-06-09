@@ -22,12 +22,12 @@ if __name__ == '__main__':
     time_local = time.strftime("%Y_%m_%d_%H_%M_%S", time.localtime())
     logger.info(f"启动测试，当前时间：{time_local}")
     #设置报告的存放路径
-    report_path = os.path.join(os.path.dirname(__file__),"testReport",time_local)
+    report_path = os.path.join(os.path.dirname(__file__),"testreport",time_local)
     logger.info(f"报告将保存到：{report_path}")
 
     #文件获取路径
 
-    path = os.path.join(os.path.dirname(__file__), "testReport", "temp")
+    path = os.path.join(os.path.dirname(__file__), "testreport", "temp")
 
     logger.info(f"临时报告路径：{path}")
     #执行测试用例生成测试报告
@@ -78,5 +78,5 @@ if __name__ == '__main__':
     logger.info("钉钉通知完成")
 
     from common.auto_clear import autoClear,  clear_logs_keep_n
-    autoClear(5, "testReport")
-    clear_logs_keep_n(10, "testLog")
+    autoClear(5, "testreport")
+    clear_logs_keep_n(10, "testlog")
