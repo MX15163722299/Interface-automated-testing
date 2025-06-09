@@ -57,49 +57,49 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Python tests.Python tests for test_case.TestCase.test_case.executor": "Run",
-    "Python tests.Python tests in test_case.py.executor": "Run",
-    "Python tests.Python tests in test_case2.py.executor": "Run",
-    "Python 测试.Python 测试 (test_case.py 内).executor": "Run",
-    "Python 测试.Python 测试 (test_case1.py 内).executor": "Run",
-    "Python 测试.Python 测试 (test_email.py 内).executor": "Run",
-    "Python.__init__.executor": "Run",
-    "Python.auto_clear.executor": "Run",
-    "Python.configHttp.executor": "Run",
-    "Python.config_http.executor": "Run",
-    "Python.ding_talk.executor": "Run",
-    "Python.email.executor": "Run",
-    "Python.flask项目.executor": "Run",
-    "Python.handle_path.executor": "Run",
-    "Python.log.executor": "Run",
-    "Python.main.executor": "Run",
-    "Python.mysql_client.executor": "Run",
-    "Python.pre_solve.executor": "Run",
-    "Python.pre_solve_1.executor": "Run",
-    "Python.publicAssert.executor": "Run",
-    "Python.readConfig.executor": "Run",
-    "Python.readData.executor": "Run",
-    "Python.read_config.executor": "Run",
-    "Python.send_email.executor": "Run",
-    "Python.test_case.executor": "Run",
-    "Python.test_case1.executor": "Run",
-    "Python.时间包学习.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "master",
-    "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "D:/py_code/Python_pytest学习",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Python tests.Python tests for test_case.TestCase.test_case.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests in test_case.py.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests in test_case2.py.executor&quot;: &quot;Run&quot;,
+    &quot;Python 测试.Python 测试 (test_case.py 内).executor&quot;: &quot;Run&quot;,
+    &quot;Python 测试.Python 测试 (test_case1.py 内).executor&quot;: &quot;Run&quot;,
+    &quot;Python 测试.Python 测试 (test_email.py 内).executor&quot;: &quot;Run&quot;,
+    &quot;Python.__init__.executor&quot;: &quot;Run&quot;,
+    &quot;Python.auto_clear.executor&quot;: &quot;Run&quot;,
+    &quot;Python.configHttp.executor&quot;: &quot;Run&quot;,
+    &quot;Python.config_http.executor&quot;: &quot;Run&quot;,
+    &quot;Python.ding_talk.executor&quot;: &quot;Run&quot;,
+    &quot;Python.email.executor&quot;: &quot;Run&quot;,
+    &quot;Python.flask项目.executor&quot;: &quot;Run&quot;,
+    &quot;Python.handle_path.executor&quot;: &quot;Run&quot;,
+    &quot;Python.log.executor&quot;: &quot;Run&quot;,
+    &quot;Python.main.executor&quot;: &quot;Run&quot;,
+    &quot;Python.mysql_client.executor&quot;: &quot;Run&quot;,
+    &quot;Python.pre_solve.executor&quot;: &quot;Run&quot;,
+    &quot;Python.pre_solve_1.executor&quot;: &quot;Run&quot;,
+    &quot;Python.publicAssert.executor&quot;: &quot;Run&quot;,
+    &quot;Python.readConfig.executor&quot;: &quot;Run&quot;,
+    &quot;Python.readData.executor&quot;: &quot;Run&quot;,
+    &quot;Python.read_config.executor&quot;: &quot;Run&quot;,
+    &quot;Python.send_email.executor&quot;: &quot;Run&quot;,
+    &quot;Python.test_case.executor&quot;: &quot;Run&quot;,
+    &quot;Python.test_case1.executor&quot;: &quot;Run&quot;,
+    &quot;Python.时间包学习.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/py_code/Python_pytest学习&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\py_code\pp5\testData" />
@@ -232,10 +232,10 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.main" />
         <item itemvalue="Python.test_case" />
         <item itemvalue="Python.public_assert" />
         <item itemvalue="Python.mysql_client" />
+        <item itemvalue="Python.main" />
         <item itemvalue="Python.flask项目" />
       </list>
     </recent_temporary>
