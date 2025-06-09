@@ -71,20 +71,16 @@ class PublicAssert:
 
 if __name__ == '__main__':
     from common.read_data import ReadData
-    from common.mysql_client import MySQLClient
     from common.conf_test import db
     rd = ReadData()
     testdata = rd.read_excel()
     print(f"测试数据{testdata[1]}")
     print(f"预期结果{testdata[1]['expect']}")
-    # print({testdata[6]["expect"])
     from common.config_http import ConfigHttp
     chttp = ConfigHttp(testdata[1])
     res = chttp.run()
     print(f"实际结果{res.json()}")
-    # mysql = MySQLClient()
 
-    # print(f"数据库结果{db}")
     p = PublicAssert(testdata[1]['expect'],res,db)
     p.public_assert()
 

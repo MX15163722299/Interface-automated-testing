@@ -1,9 +1,8 @@
 import pytest
-import requests
 from common.read_data import ReadData
 from common.pre_solve import PreSolve
 from common.config_http import ConfigHttp
-from common.publicAssert import PublicAssert
+from common.public_assert import PublicAssert
 
 '''
 导包
