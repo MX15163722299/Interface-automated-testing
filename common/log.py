@@ -4,7 +4,7 @@ from logging.handlers import TimedRotatingFileHandler
 import time
 
 # 日志保存路径
-path = os.path.dirname(os.path.dirname(__file__)) + "/testLog"
+path = os.path.dirname(os.path.dirname(__file__)) + "/testlog"
 if not os.path.exists(path):
     os.makedirs(path)
 

@@ -17,9 +17,9 @@ class ReadData():
     def __init__(self):
         # 1.1
         # 获取文件路径
-        # self.path_name = os.path.dirname(os.path.dirname(__file__)) + "/testData/data.xls"
+        # self.path_name = os.path.dirname(os.path.dirname(__file__)) + "/testdata/data.xls"
         base_dir = os.path.dirname(os.path.dirname(__file__))
-        self.path_name = os.path.join(base_dir, "testData", "data.xls")
+        self.path_name = os.path.join(base_dir, "testdata", "data.xls")
         print(self.path_name)
         # 1.2
         # 打开并且读取excel
@@ -57,9 +57,9 @@ class ReadData():
 
     def read_json(self):
         #1.1 获取文件路径
-        # json_path = os.path.dirname(os.path.dirname(__file__)) + "/testData/data.json"
+        # json_path = os.path.dirname(os.path.dirname(__file__)) + "/testdata/data.json"
         base_dir = os.path.dirname(os.path.dirname(__file__))
-        json_path = os.path.join(base_dir, "testData", "data.json")
+        json_path = os.path.join(base_dir, "testdata", "data.json")
         #1.2 打开json文件
         with open(json_path,'r',encoding='utf-8') as f:
             #1.3 将json 转化为字典并且存到变量里面
@@ -70,7 +70,7 @@ class ReadData():
 
     def read_yaml(self):
         base_dir = os.path.dirname(os.path.dirname(__file__))
-        yaml_path = os.path.join(base_dir, "testData", "data.yaml")
+        yaml_path = os.path.join(base_dir, "testdata", "data.yaml")
 
         with open(yaml_path,'r',encoding='utf-8') as f:
             testdata = yaml.safe_load(f)

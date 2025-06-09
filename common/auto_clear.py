@@ -39,7 +39,7 @@ def clear_logs_keep_n(keep,folder_name):
     """
     清理指定日志目录中以 log.log 开头的日志文件，只保留最新 keep 个。
 
-    :param folder_name: 日志目录名（相对于项目根目录，如 "testLog"）
+    :param folder_name: 日志目录名（相对于项目根目录，如 "testlog"）
     :param keep: 要保留的日志数量（默认保留 5 个）
     """
     # 构造完整路径：项目根目录 + 日志文件夹
@@ -73,5 +73,5 @@ def clear_logs_keep_n(keep,folder_name):
 
 
 if __name__ == '__main__':
-    # autoClear(5, "testLog")
-    clear_logs_keep_n(10,"testLog")
+    # autoClear(5, "testlog")
+    clear_logs_keep_n(10,"testlog")
