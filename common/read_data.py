@@ -2,90 +2,104 @@ import xlrd
 import os
 import json
 import yaml
-'''
-定义一个类
-1 定义初始化方法
 
-2.定义一个组装数据的对外方法：read_excel
-    循环读取每一行作为一条测试数据（第一行除外）
-    2.1 获取每一行的数据
-    2.2 组装成一个字典
-    2.3 将组装好的字典翻到结果列表
-    2.4 将组装好的结果列表返回给调用使用    
-'''
 class ReadData():
     def __init__(self):
-        # 1.1
-        # 获取文件路径
-        # self.path_name = os.path.dirname(os.path.dirname(__file__)) + "/testdata/data.xls"
         base_dir = os.path.dirname(os.path.dirname(__file__))
-        self.path_name = os.path.join(base_dir, "testdata", "data.xls")
-        print(self.path_name)
-        # 1.2
-        # 打开并且读取excel
+        self.path_name = os.path.join(base_dir, "testdata", "data.xls")  # ← 修改为你的文件名
+        print(f"📖 当前用例路径：{self.path_name}")
+
         self.read_book = xlrd.open_workbook(self.path_name)
-
-        # 1.3
-        # 获取置顶的sheet页面
         self.sheet = self.read_book.sheet_by_index(0)
-
-        # 1.4
-        # 获取最大行最大列
         self.max_row = self.sheet.nrows
-
         self.max_col = self.sheet.ncols
-
-        # 1.5
-        # 预设一个返回列表，默认为空列表
-        self.res_list = []
-
-        #1.6 获取第一行作为列表的 key
-
         self.first_row = self.sheet.row_values(0)
 
-
     def read_excel(self):
-        for i in range(1,self.max_row):
-            # 获取每一行的数据
-            rew_value = self.sheet.row_values(i,0)
-            #组装成为一个字典
-            dict1 = dict(zip(self.first_row,rew_value))
-            #组装好的字典放到列表里面
-            self.res_list.append(dict1)
-        #将结果返回
-        return self.res_list
+        res_list = []
+        for i in range(1, self.max_row):
+            row_values = self.sheet.row_values(i, 0)
+            # 去除字段中的前后空格
+            cleaned = [str(cell).strip() if isinstance(cell, str) else cell for cell in row_values]
+            # 跳过空行
+            if all([v == '' for v in cleaned]):
+                continue
+            data_dict = dict(zip(self.first_row, cleaned))
+            # 模块名归一化处理
+            if "name" in data_dict:
+                data_dict["name"] = data_dict["name"].strip().lower()
+            res_list.append(data_dict)
+        return res_list
+
+    def read_excel_by_name(self, name_name: str):
+        """按模块名筛选Excel用例，name 不区分大小写"""
+        all_data = self.read_excel()
+        return [d for d in all_data if d.get("name", "").lower() == name_name.lower()]
 
     def read_json(self):
-        #1.1 获取文件路径
-        # json_path = os.path.dirname(os.path.dirname(__file__)) + "/testdata/data.json"
         base_dir = os.path.dirname(os.path.dirname(__file__))
         json_path = os.path.join(base_dir, "testdata", "data.json")
-        #1.2 打开json文件
-        with open(json_path,'r',encoding='utf-8') as f:
-            #1.3 将json 转化为字典并且存到变量里面
-            testdata = json.load(f)
-            #1.4 读取字典内所有的value 转化为列表
-            # testdata1 = list(testdata.values())
-        return testdata
+        with open(json_path, 'r', encoding='utf-8') as f:
+            return json.load(f)
 
+    def read_json_by_name(self, name_name: str):
+        all_data = self.read_json()
+        return [d for d in all_data if d.get("name", "").lower() == name_name.lower()]
     def read_yaml(self):
         base_dir = os.path.dirname(os.path.dirname(__file__))
         yaml_path = os.path.join(base_dir, "testdata", "data.yaml")
-
-        with open(yaml_path,'r',encoding='utf-8') as f:
-            testdata = yaml.safe_load(f)
-        return testdata
+        with open(yaml_path, 'r', encoding='utf-8') as f:
+            return yaml.safe_load(f)
+    def read_yaml_by_name(self, name_name: str):
+        all_data = self.read_yaml()
+        return [d for d in all_data if d.get("name", "").lower() == name_name.lower()]
 
 if __name__ == '__main__':
-    re = ReadData()
-    rep = re.read_excel()
-    print(rep[6])
+    rd = ReadData()
+    #=================excel=======================================================================================================
+    #打印全部
+    all_data = rd.read_excel()
+    print(f"📄 全部测试用例共 {len(all_data)} 条")
 
-    res = re.read_json()
-    print(res[6])
+    # # 按模块读取示例
+    # login_data = rd.read_excel_by_name("login")
+    # print(f"🔍 login模块用例共 {len(login_data)} 条")
+    # #register
+    # login_data = rd.read_excel_by_name("register")
+    # print(f"🔍register模块用例共 {len(login_data)} 条")
+    # #get_user_info
+    login_data = rd.read_excel_by_name("get_user_info")
+    print(f"🔍profile模块用例共 {len(login_data)} 条")
+    # #get_product
+    # login_data = rd.read_excel_by_name("get_product")
+    # print(f"🔍get_product模块用例共 {len(login_data)} 条")
+    # #submit_order
+    # login_data = rd.read_excel_by_name("submit_order")
+    # print(f"🔍submit_order模块用例共 {len(login_data)} 条")
+    # #get_orders
+    # login_data = rd.read_excel_by_name("get_orders")
+    # print(f"🔍get_orders模块用例共 {len(login_data)} 条")
+    # #update_user_info
+    # login_data = rd.read_excel_by_name("update_user_info")
+    # print(f"🔍update_user_info模块用例共 {len(login_data)} 条")
 
-    res = re.read_yaml()
-    print(res[6])
+#=========================json===================================================================================================
+    # print(f"📄 全部 YAML 用例数：{len(rd.read_yaml())}")
+    # print(f"🔍 登录模块 YAML 用例：{rd.read_yaml_by_name('login')}")
+    #
+    # print(f"📄 全部 JSON 用例数：{len(rd.read_json())}")
+    # print(f"🔍 注册模块 JSON 用例：{rd.read_json_by_name('register')}")
+    #
+    # print(f"📄 全部 EXCEL 用例数：{len(rd.read_excel())}")
+    # print(f"🔍 订单模块 EXCEL 用例：{rd.read_excel_by_name('get_orders')}")
 
-
-
+#=====================================yaml==================================================================================
+    # print(f"📄 获取全部用例数：{len(rd.read_yaml())}")
+    # #register
+    # print(f"🔍 获取register模块用例：{rd.read_yaml_by_name('register')}")
+    # print(f"🔍 获取login模块用例：{rd.read_yaml_by_name('login')}")
+    # print(f"🔍 获取profile模块用例：{rd.read_yaml_by_name('profile')}")
+    # print(f"🔍 获取get_product模块用例：{rd.read_yaml_by_name('get_product')}")
+    # print(f"🔍 获取submit_order模块用例：{rd.read_yaml_by_name('submit_order')}")
+    # print(f"🔍 获取get_orders模块用例：{rd.read_yaml_by_name('get_orders')}")
+    # print(f"🔍 获取update_user_info模块用例：{rd.read_yaml_by_name('update_user_info')}")

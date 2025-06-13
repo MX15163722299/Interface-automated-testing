@@ -28,13 +28,6 @@ class PublicAssert:
         self.status = res.status_code
         self.db = db
 
-
-        # print(f"预期结果{self.dic}")
-        # print(f"实际结果{self.res}")
-        # print(f"状态码{self.status}")
-        # print(f"db{self.db}")
-
-
 # 2.定义一个对外的断言方法
     def public_assert(self):
         assert self.status in [200, 304, 201], f"❌ 接口请求失败，状态码：{self.status}"

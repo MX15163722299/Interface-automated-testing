@@ -2,7 +2,7 @@ import json
 import re
 from jsonpath import jsonpath
 from common.config_http import ConfigHttp
-
+from common.log import logger
 # 模拟响应结构统一封装（兼容 header 和 json）
 class DummyResponse:
     def __init__(self, json_data, headers=None):
@@ -30,6 +30,13 @@ class PreSolve:
         self.res_dict = {}             # 缓存所有已执行过的前置响应
 
     def preSolve(self, dic):
+
+        # 判断是否为依赖用例，如果不是，则跳过替换逻辑
+        if dic.get("rely", "").strip().lower() != "y":
+            print(f"ℹ当前用例《{dic.get('title', '未命名用例')}》未设置为依赖用例（rely != 'y'），跳过前置替换。")
+            logger.info(f"当前用例《{dic.get('title', '未命名用例')}》未设置为依赖用例（rely != 'y'），跳过前置替换。")
+            return dic.get("header", {}), dic.get("value", {})
+
         # 1. 获取所有 ${id:field} 格式的占位符
         pattern = re.compile(r"\${(\d+):(.+?)}")
         all_placeholders = pattern.findall(json.dumps(dic))  # 返回的是列表：[('1', 'id'), ('1', 'name')]
