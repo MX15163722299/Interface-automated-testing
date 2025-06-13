@@ -4,10 +4,10 @@ from logging.handlers import TimedRotatingFileHandler
 import time
 
 # 日志保存路径
-path = os.path.dirname(os.path.dirname(__file__)) + "/testlog"
+path_base = os.path.dirname(os.path.dirname(__file__))
+path = os.path.join(path_base, "testlog")
 if not os.path.exists(path):
     os.makedirs(path)
-
 def log():
     logger = logging.getLogger("test")
 
@@ -36,7 +36,6 @@ def log():
     fh.suffix = "%Y-%m-%d-%H-%M-%S"
     fh.setFormatter(format1)
     logger.addHandler(fh)
-
     return logger
 
 # 单例 logger
