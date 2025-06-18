@@ -13,10 +13,7 @@ import pytest
 import shutil
 import subprocess  #pytest运行器
 from common.log import logger
-from common.conf_test import db
-from shutil import make_archive
 from common.send_email import SendEmail
-from common.auto_clear import autoClear
 # 修改标题
 from common.allure_revise import AllureRevise
 

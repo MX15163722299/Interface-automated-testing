@@ -1,8 +1,8 @@
-# conf_test.py
+# conftest.py
 import pytest
 from common.mysql_client import MySQLClient
 
-@pytest.fixture(scope="function")
+@pytest.fixture(scope="module")
 def db():
     conn = MySQLClient()
     yield conn

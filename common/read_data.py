@@ -47,9 +47,10 @@ class ReadData():
         return [d for d in all_data if d.get("name", "").lower() == name_name.lower()]
     def read_yaml(self):
         base_dir = os.path.dirname(os.path.dirname(__file__))
-        yaml_path = os.path.join(base_dir, "testdata", "data.yaml")
+        yaml_path = os.path.join(base_dir, "testdata", "data1.yaml")
         with open(yaml_path, 'r', encoding='utf-8') as f:
-            return yaml.safe_load(f)
+            data = yaml.safe_load(f)
+            return data.get("testcases",[])  # 把 testcases 列表取出来返回
     def read_yaml_by_name(self, name_name: str):
         all_data = self.read_yaml()
         return [d for d in all_data if d.get("name", "").lower() == name_name.lower()]
@@ -58,8 +59,8 @@ if __name__ == '__main__':
     rd = ReadData()
     #=================excel=======================================================================================================
     #打印全部
-    all_data = rd.read_excel()
-    print(f"📄 全部测试用例共 {len(all_data)} 条")
+    # all_data = rd.read_excel()
+    # print(f"📄 全部测试用例共 {len(all_data)} 条")
 
     # # 按模块读取示例
     # login_data = rd.read_excel_by_name("login")
@@ -68,8 +69,8 @@ if __name__ == '__main__':
     # login_data = rd.read_excel_by_name("register")
     # print(f"🔍register模块用例共 {len(login_data)} 条")
     # #get_user_info
-    login_data = rd.read_excel_by_name("get_user_info")
-    print(f"🔍profile模块用例共 {len(login_data)} 条")
+    # login_data = rd.read_excel_by_name("get_user_info")
+    # print(f"🔍profile模块用例共 {len(login_data)} 条")
     # #get_product
     # login_data = rd.read_excel_by_name("get_product")
     # print(f"🔍get_product模块用例共 {len(login_data)} 条")
@@ -94,9 +95,10 @@ if __name__ == '__main__':
     # print(f"🔍 订单模块 EXCEL 用例：{rd.read_excel_by_name('get_orders')}")
 
 #=====================================yaml==================================================================================
-    # print(f"📄 获取全部用例数：{len(rd.read_yaml())}")
-    # #register
-    # print(f"🔍 获取register模块用例：{rd.read_yaml_by_name('register')}")
+    print(f"📄 获取全部用例数：{len(rd.read_yaml())}")
+    #register
+    print(f"📄 获取全部用例===：{rd.read_yaml()[0]}")
+    print(f"🔍 获取register模块用例：{rd.read_yaml_by_name('register')}")
     # print(f"🔍 获取login模块用例：{rd.read_yaml_by_name('login')}")
     # print(f"🔍 获取profile模块用例：{rd.read_yaml_by_name('profile')}")
     # print(f"🔍 获取get_product模块用例：{rd.read_yaml_by_name('get_product')}")

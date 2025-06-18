@@ -1,3 +1,4 @@
+import sys
 import pytest
 import allure
 from common.read_data import ReadData
@@ -14,22 +15,21 @@ from common.public_assert import PublicAssert
         2.1.2 进行请求，获取返回结果
         2.1.3 断言返回实际结果，并且判断执行成功/失败
 '''
+#====================================excel ==============================
 rd = ReadData()
 #  获取测试数据 ----- 依赖模块必传必用的数据
-test_data = rd.read_excel()
-
-#获取获取商品接口数据
-test_data_get_product = rd.read_excel_by_name("get_product")
-
-
-
-from common.conf_test import db
-import sys
+# test_data = rd.read_excel()
+#
+# #获取获取商品接口数据
+# test_data_get_product = rd.read_excel_by_name("get_product")
+#=====================================yaml================================
+test_data = rd.read_yaml()
+test_data_get_product = rd.read_yaml_by_name("get_product")
 
 
 
 #商品模块
-@pytest.mark.skipif(sys.platform.startswith("win"), reason="Windows 下有兼容问题")
+# @pytest.mark.skipif(sys.platform.startswith("win"), reason="Windows 下有兼容问题")
 class TestProduct:
     #  七、测试获取商品接口  ,ids=[d["title"] for d in test_data_get_product]
     @pytest.mark.smoke
@@ -44,7 +44,7 @@ class TestProduct:
         # 实例化请求类
         ch = ConfigHttp(dic)
         response = ch.run()
-        print(f"✅ 执行结果：{response}")
+        print(f"执行结果：{response}")
         # 断言
         pA = PublicAssert(dic, response, db)
         pA.public_assert()

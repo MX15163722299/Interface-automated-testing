@@ -20,7 +20,7 @@ class PublicAssert:
             try:
                 dic = eval(dic)  # 👈 如果是字符串，转成 dict
             except Exception as e:
-                raise ValueError(f"❌ 断言数据解析失败，请检查 expect 格式是否正确：{e}")
+                raise ValueError(f"断言数据解析失败，请检查 expect 格式是否正确：{e}")
 
         self.interface_expect = dic.get("interface_assert", {})
         self.db_expect = dic.get("db_assert", {})
@@ -30,41 +30,41 @@ class PublicAssert:
 
 # 2.定义一个对外的断言方法
     def public_assert(self):
-        assert self.status in [200, 304, 201], f"❌ 接口请求失败，状态码：{self.status}"
+        assert self.status in [200, 304, 201], f"接口请求失败，状态码：{self.status}"
         msg = ""
 
         for k, v in self.interface_expect.items():
             real = jsonpath(self.res, f"$..{k}")
             if not real:
-                msg += f"\n❌ 接口返回中未找到字段：{k}"
+                msg += f"\n接口返回中未找到字段：{k}"
             elif str(v) != str(real[0]):
-                msg += f"\n❌ 字段【{k}】断言失败：预期 {v}，实际 {real[0]}"
+                msg += f"\n字段【{k}】断言失败：预期 {v}，实际 {real[0]}"
 
         if self.db_expect and self.db:
             sql = self.db_expect.get("sql")
             expected = str(self.db_expect.get("expect"))
             result = self.db.query(sql)
             if not result:
-                msg += f"\n❌ 数据库查询无返回，SQL：{sql}"
+                msg += f"\n数据库查询无返回，SQL：{sql}"
             else:
                 actual = str(result[0][0])
                 if actual != expected:
-                    msg += f"\n❌ 数据库断言失败：期望 {expected}，实际 {actual}"
+                    msg += f"\n 数据库断言失败：期望 {expected}，实际 {actual}"
         elif self.db_expect and not self.db:
-            msg += "\n⚠️ 用例包含数据库断言，但未传入 db 连接"
+            msg += "\n⚠用例包含数据库断言，但未传入 db 连接"
 
         # assert msg == "",msg
         # ...之前的断言累加逻辑...
 
         if msg:
-            print("❌ 断言失败，详情如下：")
+            print("断言失败，详情如下：")
             print(msg)
             raise AssertionError(msg)  # ✅ 保证 main.py 调用时也能中断
 
 
 if __name__ == '__main__':
     from common.read_data import ReadData
-    from common.conf_test import db
+    from testcase.conftest import db
     rd = ReadData()
     testdata = rd.read_excel()
     print(f"测试数据{testdata[1]}")

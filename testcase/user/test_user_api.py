@@ -14,18 +14,27 @@ import allure
         2.1.3 断言返回实际结果，并且判断执行成功/失败
 '''
 rd = ReadData()
-#  获取测试数据 ----- 依赖模块必传必用的数据
-test_data = rd.read_excel()
-#  获取登录接口数据  --  每个测试用例的数据
-test_data_login = rd.read_excel_by_name("login")
-#获取注册接口数据
-test_data_register = rd.read_excel_by_name("register")
-#获取获取用户信息接口数据
-test_data_get_user_info = rd.read_excel_by_name("get_user_info")
-#获取更新用户信息接口数据
-test_data_update_user_info = rd.read_excel_by_name("update_user_info")
 
-from common.conf_test import db
+#========================================================excel=====================================
+# #  获取测试数据 ----- 依赖模块必传必用的数据
+# test_data = rd.read_excel()
+# #  获取登录接口数据  --  每个测试用例的数据
+# test_data_login = rd.read_excel_by_name("login")
+# #获取注册接口数据
+# test_data_register = rd.read_excel_by_name("register")
+# #获取获取用户信息接口数据
+# test_data_get_user_info = rd.read_excel_by_name("get_user_info")
+# #获取更新用户信息接口数据
+# test_data_update_user_info = rd.read_excel_by_name("update_user_info")
+
+#=============================yaml===================================================================================================
+test_data = rd.read_yaml()
+test_data_login = rd.read_yaml_by_name("login")
+test_data_get_user_info = rd.read_yaml_by_name("get_user_info")
+test_data_update_user_info = rd.read_yaml_by_name("update_user_info")
+test_data_register = rd.read_yaml_by_name("register")
+
+
 
 #用户模块
 class TestUserInfo:
@@ -44,7 +53,7 @@ class TestUserInfo:
        # 实例化请求类
        ch = ConfigHttp(dic)
        response = ch.run()
-       print(f"✅ 执行结果：{response}")
+       print(f" 执行结果：{response}")
        # 断言
        pA = PublicAssert(dic, response,db)
        pA.public_assert()
@@ -62,7 +71,7 @@ class TestUserInfo:
        # 实例化请求类
        ch = ConfigHttp(dic)
        response = ch.run()
-       print(f"✅ 执行结果：{response}")
+       print(f"执行结果：{response}")
        # 断言
        pA = PublicAssert(dic, response,db)
        pA.public_assert()
@@ -80,7 +89,7 @@ class TestUserInfo:
        # 实例化请求类
        ch = ConfigHttp(dic)
        response = ch.run()
-       print(f"✅ 执行结果：{response}")
+       print(f"执行结果：{response}")
        # 断言
        pA = PublicAssert(dic, response,db)
        pA.public_assert()
@@ -98,7 +107,7 @@ class TestUserInfo:
         # 实例化请求类
         ch = ConfigHttp(dic)
         response = ch.run()
-        print(f"✅ 执行结果：{response}")
+        print(f"执行结果：{response}")
         # 断言
         pA = PublicAssert(dic, response, db)
         pA.public_assert()
