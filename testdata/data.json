@@ -1,107 +1,157 @@
 [
   {
-    "id":1,
-    "title":"用户注册",
-    "interfaceUrl":"http:\/\/localhost:5000\/register",
-    "name":"register",
-    "contentType":"json",
-    "method":"post",
-    "file_var":"",
-    "file_path":"",
-    "value":"{'username': 'testuser7', 'password': '123456', 'age': 20, 'sex': 'male'}",
-    "header":"{}",
-    "rely":"n",
-    "expect":"{'interface_assert':{'errorcode': 0}}",
-    "extract":""
+    "id": 1,
+    "title": "用户注册",
+    "interfaceUrl": "http://localhost:5000/register",
+    "name": "register",
+    "contentType": "json",
+    "method": "post",
+    "file_var": "",
+    "file_path": "",
+    "value": {
+      "username": "testuser7",
+      "password": "123456",
+      "age": 20,
+      "sex": "male"
+    },
+    "header": "{}",
+    "rely": "n",
+    "expect": {
+      "interface_assert": {
+        "errorcode": 0
+      }
+    },
+    "extract": ""
   },
   {
-    "id":2,
-    "title":"用户登录",
-    "interfaceUrl":"http:\/\/localhost:5000\/login",
-    "name":"login",
-    "contentType":"form",
-    "method":"post",
-    "file_var":"",
-    "file_path":"",
-    "value":"{'username': 'user1', 'password': 'p001'}",
-    "header":"{}",
-    "rely":"n",
-    "expect":"{'interface_assert':{'errorcode': 0, 'age': 200}}",
-    "extract":""
+    "id": 2,
+    "title": "用户登录",
+    "interfaceUrl": "http://localhost:5000/login",
+    "name": "login",
+    "contentType": "form",
+    "method": "post",
+    "file_var": "",
+    "file_path": "",
+    "value": {
+      "username": "user1",
+      "password": "p001"
+    },
+    "header": "{}",
+    "rely": "n",
+    "expect": {
+      "interface_assert": {
+        "errorcode": 0,
+        "age": 200
+      }
+    },
+    "extract": ""
   },
   {
-    "id":3,
-    "title":"获取用户信息",
-    "interfaceUrl":"http:\/\/localhost:5000\/profile",
-    "name":"profile",
-    "contentType":"none",
-    "method":"get",
-    "file_var":"",
-    "file_path":"",
-    "value":"{}",
-    "header":"{'Cookie': '${2:Set-Cookie}'}",
-    "rely":"y",
-    "expect":"{'interface_assert':{'errorcode': 0}}",
-    "extract":""
+    "id": 3,
+    "title": "获取用户信息",
+    "interfaceUrl": "http://localhost:5000/profile",
+    "name": "profile",
+    "contentType": "none",
+    "method": "get",
+    "file_var": "",
+    "file_path": "",
+    "value": {},
+    "header": "{'Cookie': '${2:Set-Cookie}'}",
+    "rely": "y",
+    "expect": {
+      "interface_assert": {
+        "errorcode": 0
+      }
+    },
+    "extract": ""
   },
   {
-    "id":4,
-    "title":"查询商品信息",
-    "interfaceUrl":"http:\/\/localhost:5000\/get_product",
-    "name":"get_product",
-    "contentType":"params",
-    "method":"get",
-    "file_var":"",
-    "file_path":"",
-    "value":"{'productid': 'product1'}",
-    "header":"{}",
-    "rely":"n",
-    "expect":"{'interface_assert':{'errorcode': 0}}",
-    "extract":""
+    "id": 4,
+    "title": "查询商品信息",
+    "interfaceUrl": "http://localhost:5000/get_product",
+    "name": "get_product",
+    "contentType": "params",
+    "method": "get",
+    "file_var": "",
+    "file_path": "",
+    "value": {
+      "productid": "product1"
+    },
+    "header": "{}",
+    "rely": "n",
+    "expect": {
+      "interface_assert": {
+        "errorcode": 0
+      }
+    },
+    "extract": ""
   },
   {
-    "id":5,
-    "title":"提交订单",
-    "interfaceUrl":"http:\/\/localhost:5000\/submit_order",
-    "name":"submit_order",
-    "contentType":"json",
-    "method":"post",
-    "file_var":"",
-    "file_path":"",
-    "value":"{'productid': 'product1'}",
-    "header":"{'Cookie': '${2:Set-Cookie}'}",
-    "rely":"y",
-    "expect":"{'interface_assert':{'message': 'Order submitted successfully'}}",
-    "extract":""
+    "id": 5,
+    "title": "提交订单",
+    "interfaceUrl": "http://localhost:5000/submit_order",
+    "name": "submit_order",
+    "contentType": "json",
+    "method": "post",
+    "file_var": "",
+    "file_path": "",
+    "value": {
+      "productid": "product1"
+    },
+    "header": "{'Cookie': '${2:Set-Cookie}'}",
+    "rely": "y",
+    "expect": {
+      "interface_assert": {
+        "message": "Order submitted successfully"
+      }
+    },
+    "extract": ""
   },
   {
-    "id":6,
-    "title":"查询订单",
-    "interfaceUrl":"http:\/\/localhost:5000\/get_orders",
-    "name":"get_orders",
-    "contentType":"params",
-    "method":"get",
-    "file_var":"",
-    "file_path":"",
-    "value":"{}",
-    "header":"{'Cookie': '${2:Set-Cookie}'}",
-    "rely":"y",
-    "expect":"{'interface_assert':{'order_id':'d001'}}",
-    "extract":""
+    "id": 6,
+    "title": "查询订单",
+    "interfaceUrl": "http://localhost:5000/get_orders",
+    "name": "get_orders",
+    "contentType": "params",
+    "method": "get",
+    "file_var": "",
+    "file_path": "",
+    "value": {},
+    "header": "{'Cookie': '${2:Set-Cookie}'}",
+    "rely": "y",
+    "expect": {
+      "interface_assert": {
+        "order_id": "d001"
+      }
+    },
+    "extract": ""
   },
   {
-    "id":7,
-    "title":"更新用户信息",
-    "interfaceUrl":"http:\/\/localhost:5000\/update_user_info",
-    "name":"update_user_info",
-    "contentType":"json",
-    "method":"post",
-    "file_var":"",
-    "file_path":"",
-    "value":"{'username': '${2:username}', 'info': {'age': '${2:info.age}'}}",
-    "header":"{'Cookie': '${2:Set-Cookie}'}",
-    "rely":"y",
-    "expect":"{'interface_assert':{'errorcode': 0}, 'db_assert': {'sql': 'SELECT name FROM rental_survey WHERE id=30','expect': 'leo'}}",
-    "extract":""
+    "id": 7,
+    "title": "更新用户信息",
+    "interfaceUrl": "http://localhost:5000/update_user_info",
+    "name": "update_user_info",
+    "contentType": "json",
+    "method": "post",
+    "file_var": "",
+    "file_path": "",
+    "value": {
+      "username": "${2:username}",
+      "info": {
+        "age": "${2:info.age}"
+      }
+    },
+    "header": "{'Cookie': '${2:Set-Cookie}'}",
+    "rely": "y",
+    "expect": {
+      "interface_assert": {
+        "errorcode": 0
+      },
+      "db_assert": {
+        "sql": "SELECT name FROM rental_survey WHERE id=30",
+        "expect": "leo"
+      }
+    },
+    "extract": ""
   }
 ]
